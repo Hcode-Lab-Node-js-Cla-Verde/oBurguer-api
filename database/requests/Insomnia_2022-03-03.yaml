@@ -1,0 +1,239 @@
+_type: export
+__export_format: 4
+__export_date: 2022-03-03T23:57:18.225Z
+__export_source: insomnia.desktop.app:v2022.1.0
+resources:
+  - _id: req_78446d964b5b4882b91e63edfea1576f
+    parentId: fld_eb11f91941004adf8cd374835f1d6eab
+    modified: 1646351571414
+    created: 1646351546603
+    url: "{{ _.base_url }}/"
+    name: List
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1645861350968.0625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_eb11f91941004adf8cd374835f1d6eab
+    parentId: wrk_3941404da02d4a9796dac8ba65a716fb
+    modified: 1646351563700
+    created: 1646351563700
+    name: Auth
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1646351563700
+    _type: request_group
+  - _id: wrk_3941404da02d4a9796dac8ba65a716fb
+    parentId: null
+    modified: 1646351142643
+    created: 1646351142643
+    name: OBurguer
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_31beaf6f5f6c4cbb86c46591b9038517
+    parentId: fld_585af2c03e164cc98bf74281cfbda65c
+    modified: 1646351391471
+    created: 1646351378244
+    url: "{{ _.base_url }}/"
+    name: List
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646351378244
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_585af2c03e164cc98bf74281cfbda65c
+    parentId: wrk_3941404da02d4a9796dac8ba65a716fb
+    modified: 1646351727947
+    created: 1646351181058
+    name: Users
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1646351550748
+    _type: request_group
+  - _id: req_8f5ea11fb3074ff78bd19a51ee547684
+    parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
+    modified: 1646351455756
+    created: 1646351454490
+    url: "{{ _.base_url }}/"
+    name: List
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646090030363.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_8a65da6415bd46d58e8cf0afa84b1be0
+    parentId: wrk_3941404da02d4a9796dac8ba65a716fb
+    modified: 1646351733607
+    created: 1646351441315
+    name: Addresses
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1646351544272
+    _type: request_group
+  - _id: req_9149434eea1e4d5484cadc84caad70b8
+    parentId: fld_8750af770b054cd796d0447e462bfabb
+    modified: 1646351569854
+    created: 1646351569854
+    url: "{{ _.base_url }}/"
+    name: List
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1645845016725.5312
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_8750af770b054cd796d0447e462bfabb
+    parentId: wrk_3941404da02d4a9796dac8ba65a716fb
+    modified: 1646351537796
+    created: 1646351537796
+    name: Orders
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1646351537796
+    _type: request_group
+  - _id: req_dac58d5bbe4e42afadd934ceca5c19b2
+    parentId: fld_0e60a05891e34cc2afddbd92a76eca97
+    modified: 1646351524196
+    created: 1646351522746
+    url: "{{ _.base_url }}/"
+    name: List
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1645894019453.125
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_0e60a05891e34cc2afddbd92a76eca97
+    parentId: wrk_3941404da02d4a9796dac8ba65a716fb
+    modified: 1646351520132
+    created: 1646351520132
+    name: Order statuses
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1646351520132
+    _type: request_group
+  - _id: req_44ea78fe2a1b416c88b3354eaf28f50d
+    parentId: fld_8ff1f5841b0f486c8ef8279942477760
+    modified: 1646351499705
+    created: 1646351495741
+    url: "{{ _.base_url }}/"
+    name: List
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1645959356423.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_8ff1f5841b0f486c8ef8279942477760
+    parentId: wrk_3941404da02d4a9796dac8ba65a716fb
+    modified: 1646351492708
+    created: 1646351492708
+    name: Ingredients
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1646351492708
+    _type: request_group
+  - _id: env_bc66903b0301da7a93c3ab1d0b76588cf9295bec
+    parentId: wrk_3941404da02d4a9796dac8ba65a716fb
+    modified: 1646351256897
+    created: 1646351142648
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: {}
+    color: null
+    isPrivate: false
+    metaSortKey: 1646351142648
+    _type: environment
+  - _id: jar_bc66903b0301da7a93c3ab1d0b76588cf9295bec
+    parentId: wrk_3941404da02d4a9796dac8ba65a716fb
+    modified: 1646351142650
+    created: 1646351142650
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_beff62838b2f457888aa6e83fffe9f16
+    parentId: wrk_3941404da02d4a9796dac8ba65a716fb
+    modified: 1646351142644
+    created: 1646351142644
+    fileName: OBurguer
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_457430a5dc7041568340403307037387
+    parentId: env_bc66903b0301da7a93c3ab1d0b76588cf9295bec
+    modified: 1646351759031
+    created: 1646351260361
+    name: Development
+    data:
+      base_url: localhost:3000
+    dataPropertyOrder:
+      "&":
+        - base_url
+    color: "#22a6b3"
+    isPrivate: false
+    metaSortKey: 1646351260361
+    _type: environment
