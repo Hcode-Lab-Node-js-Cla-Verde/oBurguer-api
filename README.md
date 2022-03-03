@@ -37,8 +37,8 @@ $ npm run test:cov
 
 ## Authors
 
-[Pedro Ferreti](https://github.com/Pedro-Henrique-Ferreti)
-[Marcelo Carvalho](https://github.com/carvalhoms)
-[Eduado Vieira](https://github.com/galileoeduardo)
-[Lucas Pereira](https://github.com/lucascodev)
-[Myltiane Alves](https://github.com/Myltiane-Alves)
+- [Pedro Ferreti](https://github.com/Pedro-Henrique-Ferreti)
+- [Marcelo Carvalho](https://github.com/carvalhoms)
+- [Eduado Vieira](https://github.com/galileoeduardo)
+- [Lucas Pereira](https://github.com/lucascodev)
+- [Myltiane Alves](https://github.com/Myltiane-Alves)
