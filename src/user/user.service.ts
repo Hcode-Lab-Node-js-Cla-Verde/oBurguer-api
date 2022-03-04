@@ -1,4 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
 import { PrismaService } from 'src/prisma/prisma.service';
 
@@ -7,7 +8,7 @@ export class UserService {
 
   constructor(private prismaService: PrismaService) {}
 
-  async findOne(id: number) {
+  async findById(id: number) {
     id = Number(id);
 
     if (isNaN(id)) {
@@ -92,7 +93,48 @@ export class UserService {
     return userCreated;
   }
 
-  update(id: number) {
-    return `This action updates a #${id} user`;
+  async update(id: number, { name, email }:{ name?: string, email?: string }) {
+    id = Number(id);
+
+    if (isNaN(id)) {
+      throw new BadRequestException('Id is not a number');
+    }
+
+    const personData = {} as Prisma.PersonUpdateInput;
+    const userData = {} as Prisma.UserUpdateInput;
+
+    if (name) {
+      personData.name = name;
+    }
+
+    if (email) {
+      try {
+        await this.findByEmail(email);
+      }
+      catch (error) {
+        userData.email = email;
+      }      
+    }
+
+    const user = await this.findById(id);
+
+    if (personData) {
+      await this.prismaService.person.update({
+        where: {
+          id: user.personId,
+        },
+        data: personData,
+      });
+    }
+    if (userData) {
+      await this.prismaService.user.update({
+        where: {
+          id,
+        },
+        data: userData,
+      });  
+    }
+    
+    return this.findById(id);
   }
 }
