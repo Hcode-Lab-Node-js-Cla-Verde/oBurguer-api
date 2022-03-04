@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2022-03-04T02:09:42.683Z
+__export_date: 2022-03-04T23:47:42.385Z
 __export_source: insomnia.desktop.app:v2022.1.0
 resources:
   - _id: req_78446d964b5b4882b91e63edfea1576f
@@ -90,6 +90,44 @@ resources:
     headers: []
     authentication: {}
     metaSortKey: -1646351378244
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d16ba893a2b64f579bc707348f747baf
+    parentId: fld_585af2c03e164cc98bf74281cfbda65c
+    modified: 1646437250511
+    created: 1646433914363
+    url: "{{ _.base_url }}/users/1"
+    name: Update
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_8ba11e2207df4213a300a63722d5e241
+          name: name
+          value: johnatan
+          description: ""
+        - id: pair_50e97f3b4f9d400e9d1ab98709a75c1a
+          name: email
+          value: pedroo@gmail.com
+          description: ""
+        - id: pair_164b4a795c184caab3b884aaa72feb53
+          name: password
+          value: "123456"
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_278b955651724840b1c000f51d64b99e
+    authentication: {}
+    metaSortKey: -1646351378194
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
