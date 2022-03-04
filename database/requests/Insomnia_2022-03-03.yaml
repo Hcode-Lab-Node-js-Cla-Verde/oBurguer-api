@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2022-03-03T23:57:18.225Z
+__export_date: 2022-03-04T02:09:42.683Z
 __export_source: insomnia.desktop.app:v2022.1.0
 resources:
   - _id: req_78446d964b5b4882b91e63edfea1576f
@@ -42,19 +42,23 @@ resources:
     description: ""
     scope: collection
     _type: workspace
-  - _id: req_31beaf6f5f6c4cbb86c46591b9038517
+  - _id: req_371e4db859f64785aa33e5388872ca7e
     parentId: fld_585af2c03e164cc98bf74281cfbda65c
-    modified: 1646351391471
-    created: 1646351378244
-    url: "{{ _.base_url }}/"
-    name: List
+    modified: 1646359457769
+    created: 1646359245995
+    url: "{{ _.base_url }}/users"
+    name: Show by email
     description: ""
     method: GET
     body: {}
-    parameters: []
+    parameters:
+      - id: pair_331076cb1e3f46eb8d1bd654c07f1479
+        name: email
+        value: john.doe@gmail.com
+        description: ""
     headers: []
     authentication: {}
-    metaSortKey: -1646351378244
+    metaSortKey: -1646351378294
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -73,6 +77,27 @@ resources:
     environmentPropertyOrder: null
     metaSortKey: -1646351550748
     _type: request_group
+  - _id: req_31beaf6f5f6c4cbb86c46591b9038517
+    parentId: fld_585af2c03e164cc98bf74281cfbda65c
+    modified: 1646359230806
+    created: 1646351378244
+    url: "{{ _.base_url }}/users/1"
+    name: Show
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646351378244
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_8f5ea11fb3074ff78bd19a51ee547684
     parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
     modified: 1646351455756
@@ -106,7 +131,7 @@ resources:
     _type: request_group
   - _id: req_9149434eea1e4d5484cadc84caad70b8
     parentId: fld_8750af770b054cd796d0447e462bfabb
-    modified: 1646351569854
+    modified: 1646359214503
     created: 1646351569854
     url: "{{ _.base_url }}/"
     name: List
