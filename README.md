@@ -42,3 +42,4 @@ $ npm run test:cov
 - [Eduado Vieira](https://github.com/galileoeduardo)
 - [Lucas Pereira](https://github.com/lucascodev)
 - [Myltiane Alves](https://github.com/Myltiane-Alves)
+- [Celso Junior](https://github.com/celsojuniorsfs)
