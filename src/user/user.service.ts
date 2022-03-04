@@ -1,4 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
+import * as bcrypt from 'bcrypt';
 import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
@@ -48,6 +49,47 @@ export class UserService {
     delete user.password;
 
     return user;
+  }
+
+  async create({ name, email, password }: { name: string, email: string, password: string}) {
+    if (!name) {
+      throw new BadRequestException('Name is required');
+    }
+    if (!email) {
+      throw new BadRequestException('Email is required');
+    }
+    if (!password) {
+      throw new BadRequestException('Password is required');
+    }
+
+    let user = null;
+
+    try {
+      user = await this.findByEmail(email);
+    } catch (error) {}
+
+    if (user) {
+      throw new BadRequestException('Email already exists');
+    }
+
+    const userCreated = await this.prismaService.user.create({
+      data: {
+        person: {
+          create: {
+            name,
+          },
+        },
+        email,
+        password: bcrypt.hashSync(password, 10),
+      },
+      include: {
+        person: true,
+      },
+    });
+
+    delete userCreated.password;
+
+    return userCreated;
   }
 
   update(id: number) {
