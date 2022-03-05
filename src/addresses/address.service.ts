@@ -6,6 +6,6 @@ export class AddressService {
     constructor(private prisma: PrismaService) {}
 
     async findAll() {
-        return this.prisma.addresses.findMany();
+        return this.prisma.address.findMany();
     }
 }
