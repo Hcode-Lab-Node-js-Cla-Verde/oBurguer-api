@@ -1,4 +1,4 @@
-import { AddressModule } from './addresses/address.module';
+import { AddressModule } from './address/address.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { PrismaModule } from './prisma/prisma.module';
