@@ -4,7 +4,7 @@
 
 ## Description
 
-This project was developed by the Green clan students of the course [Hcode Lab Back-end Node.js developer](https://www.hcodelab.com.br/).
+This project was developed by the Green Clan students of the course [Hcode Lab Backend Node.js developer](https://www.hcodelab.com.br/).
 
 ## Installation
 
