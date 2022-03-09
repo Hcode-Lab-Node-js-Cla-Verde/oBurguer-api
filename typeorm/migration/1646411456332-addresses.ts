@@ -10,13 +10,13 @@ export class addresses1646411456332 implements MigrationInterface {
             name: 'addresses',
             columns: [
                 columnId,
-                columnVarchar("street", "250", false),
-                columnVarchar("number", "16", false),
-                columnVarchar("complement", "250", false),
-                columnVarchar("district", "250", false),
-                columnVarchar("city", "250", false),
-                columnVarchar("state", "250", false),
-                columnVarchar("country", "250", false),
+                columnVarchar("street","250"),
+                columnVarchar("number", "16", true),
+                columnVarchar("complement", "250", true),
+                columnVarchar("district","250"),
+                columnVarchar("city","250"),
+                columnVarchar("state","250"),
+                columnVarchar("country","250"),
                 columnVarchar("zipcode", "8", false),
                 {
                     name: "personId",
@@ -28,12 +28,12 @@ export class addresses1646411456332 implements MigrationInterface {
             ]
         }));
 
-        await queryRunner.createForeignKey('addresses', new TableForeignKey({
-            columnNames: ['personId'],
-            referencedColumnNames: ['id'],
-            referencedTableName: 'persons',
-            name: 'FK_addresses_persons',
-            onDelete: 'CASCADE',
+        await queryRunner.createForeignKey("addresses", new TableForeignKey({
+            columnNames: ["personId"],
+            referencedColumnNames: ["id"],
+            referencedTableName: "persons",
+            onDelete: "CASCADE",
+            name: "FK_addresses_persons",
         }));
     }
 
