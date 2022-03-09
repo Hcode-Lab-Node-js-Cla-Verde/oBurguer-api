@@ -24,6 +24,19 @@ export class AddressService {
         }
     }
 
+    async findOnePerson(personId: number) {
+        try {
+            personId = isValidNumber(personId)
+            return this.prisma.address.findMany({
+                where: {
+                    personId,
+                }
+            });
+        } catch (error) {
+            throw new NotFoundException(error.message);
+        }
+    }
+
     async create(data: CreateAddressDto) {
 
         data.personId = Number(data.personId);

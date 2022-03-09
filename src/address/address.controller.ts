@@ -17,11 +17,16 @@ export class AddressController {
         return await this.addressService.findOne(id);
     }
 
+    @Get('person/:id')
+    async listByPerson(@Param('id', new ParseIntPipe()) personId: number){
+        return await this.addressService.findOnePerson(personId);
+    }
+
     @Post()
     async createAddress(
         @Body() data: CreateAddressDto
         ) {
-        return this.addressService.create(data);
+        return await this.addressService.create(data);
     }
 
     @Patch(':id')
@@ -29,13 +34,13 @@ export class AddressController {
         @Body() data: UpdateAddressDto,
         @Param('id', ParseIntPipe) id: number,
     ) {
-        return this.addressService.update(id, data);
+        return await this.addressService.update(id, data);
     }
 
     @Delete(':id')
     async deleteAddress(
         @Param('id', ParseIntPipe) id: number,
     ) {
-            return this.addressService.delete(id);
+            return await this.addressService.delete(id);
     }
 }
