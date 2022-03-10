@@ -1,8 +1,68 @@
 _type: export
 __export_format: 4
-__export_date: 2022-03-04T23:47:42.385Z
-__export_source: insomnia.desktop.app:v2022.1.0
+__export_date: 2022-03-10T01:50:12.986Z
+__export_source: insomnia.desktop.app:v2022.1.1
 resources:
+  - _id: req_63dbb6928ff34e9a833ea389772251cb
+    parentId: fld_f728d9f686964e40a9013f6c695edcdc
+    modified: 1646875341943
+    created: 1646875334473
+    url: "{{ _.base_url }}/orders"
+    name: List
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646875334473
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_f728d9f686964e40a9013f6c695edcdc
+    parentId: wrk_3941404da02d4a9796dac8ba65a716fb
+    modified: 1646875321993
+    created: 1646875321993
+    name: Orders
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1646875321993
+    _type: request_group
+  - _id: wrk_3941404da02d4a9796dac8ba65a716fb
+    parentId: null
+    modified: 1646351142643
+    created: 1646351142643
+    name: OBurguer
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_99f066a99ac74efeb0ed878b9ab7528b
+    parentId: fld_f728d9f686964e40a9013f6c695edcdc
+    modified: 1646876943520
+    created: 1646876630537
+    url: "{{ _.base_url }}/orders/"
+    name: Show
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646783293120
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_78446d964b5b4882b91e63edfea1576f
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
     modified: 1646351571414
@@ -34,14 +94,6 @@ resources:
     environmentPropertyOrder: null
     metaSortKey: -1646351563700
     _type: request_group
-  - _id: wrk_3941404da02d4a9796dac8ba65a716fb
-    parentId: null
-    modified: 1646351142643
-    created: 1646351142643
-    name: OBurguer
-    description: ""
-    scope: collection
-    _type: workspace
   - _id: req_371e4db859f64785aa33e5388872ca7e
     parentId: fld_585af2c03e164cc98bf74281cfbda65c
     modified: 1646359457769
