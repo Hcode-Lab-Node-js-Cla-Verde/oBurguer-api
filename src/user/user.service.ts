@@ -18,7 +18,7 @@ export class UserService {
     const user = await this.prismaService.user.findUnique({
       where: { id },
       include: {
-        person: true,
+        persons: true,
       },
     });
 
@@ -39,7 +39,7 @@ export class UserService {
     const user = await this.prismaService.user.findUnique({
       where: { email },
       include: {
-        person: true,
+        persons: true,
       },
     });
 
@@ -75,7 +75,7 @@ export class UserService {
 
     const userCreated = await this.prismaService.user.create({
       data: {
-        person: {
+        persons: {
           create: {
             name,
           },
@@ -84,7 +84,7 @@ export class UserService {
         password: bcrypt.hashSync(password, 10),
       },
       include: {
-        person: true,
+        persons: true,
       },
     });
 

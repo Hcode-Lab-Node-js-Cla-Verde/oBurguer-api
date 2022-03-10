@@ -5,6 +5,6 @@ import { IngredientsService } from './ingredients.service';
 export class IngredientsController {
     constructor(private ingredientService: IngredientsService) {}
 
-    @Post
-    create(@Body() )
+    // @Post
+    // create(@Body() )
 }
