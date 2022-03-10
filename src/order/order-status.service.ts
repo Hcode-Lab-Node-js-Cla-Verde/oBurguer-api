@@ -1,5 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { isValidNumber } from 'src/utils';
 
 @Injectable()
 export class OrderStatusService {
@@ -10,14 +11,10 @@ export class OrderStatusService {
     return this.prismaService.orderStatus.findMany();
   }
 
-  findOne(id: number) {
-    id = Number(id);
+  async findOne(id: number) {
+    id = isValidNumber(id);
 
-    if (isNaN(id)) {
-      throw new BadRequestException('Id is invalid');
-    }
-
-    const orderStatus = this.prismaService.orderStatus.findUnique({
+    const orderStatus = await this.prismaService.orderStatus.findUnique({
       where: { id },
     });
 
