@@ -1,7 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
+import { isValidNumber } from 'src/utils';
 
 @Injectable()
 export class OrderService {
@@ -16,14 +17,29 @@ export class OrderService {
       },
     });
   }
+  
+  async findOne(id: number) {
+    id = isValidNumber(id);
+
+    const order = await this.prismaService.order.findUnique({
+      where: { id },
+      include: {
+        orderItems: true,
+        orderStatus: true,
+      },
+    });
+
+    if (!order) {
+      throw new BadRequestException('Order not found');
+    }
+
+    return order;
+  }
 
   create(createOrderDto: CreateOrderDto) {
     return 'This action adds a new order';
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} order`;
-  }
 
   update(id: number, updateOrderDto: UpdateOrderDto) {
     return `This action updates a #${id} order`;
