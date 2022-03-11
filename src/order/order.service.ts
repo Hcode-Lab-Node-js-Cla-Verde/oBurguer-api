@@ -1,9 +1,9 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { UserService } from 'src/user/user.service';
-import { UpdateOrderDto } from './dto/update-order.dto';
-import { isValidNumber } from 'src/utils';
 import { OrderStatusService } from './order-status.service';
+import { isValidNumber } from 'src/utils';
+import orderQuery from './queries/select-order';
 
 @Injectable()
 export class OrderService {
@@ -16,10 +16,7 @@ export class OrderService {
 
   findAll() {
     return this.prismaService.order.findMany({
-      include: {
-        orderItems: true,
-        orderStatus: true,
-      },
+      select: orderQuery,
     });
   }
   
@@ -28,10 +25,7 @@ export class OrderService {
 
     const order = await this.prismaService.order.findUnique({
       where: { id },
-      include: {
-        orderItems: true,
-        orderStatus: true,
-      },
+      select: orderQuery,
     });
 
     if (!order) {
@@ -48,10 +42,7 @@ export class OrderService {
       where: {
         userId: id,
       },
-      include: {
-        orderItems: true,
-        orderStatus: true,
-      },
+      select: orderQuery,
     });
   }
 
