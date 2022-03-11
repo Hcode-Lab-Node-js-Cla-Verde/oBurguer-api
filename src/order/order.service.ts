@@ -3,6 +3,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 import { UserService } from 'src/user/user.service';
 import { UpdateOrderDto } from './dto/update-order.dto';
 import { isValidNumber } from 'src/utils';
+import { OrderStatusService } from './order-status.service';
 
 @Injectable()
 export class OrderService {
@@ -10,6 +11,7 @@ export class OrderService {
   constructor(
     private prismaService: PrismaService,
     private userService: UserService,
+    private orderStatusService: OrderStatusService,
   ) {}
 
   findAll() {
@@ -85,8 +87,20 @@ export class OrderService {
     return this.findOne(order.id);
   }
 
-  update(id: number, updateOrderDto: UpdateOrderDto) {
-    return `This action updates a #${id} order`;
+  async updateStatus({ id, statusId }) {
+    id = isValidNumber(id);
+    statusId = isValidNumber(statusId, 'StatusId is invalid');
+
+    await this.orderStatusService.findOne(statusId);
+
+    await this.prismaService.order.update({
+      where: { id },
+      data: {
+        statusId,
+      },
+    });
+
+    return this.findOne(id);
   }
 
   remove(id: number) {
