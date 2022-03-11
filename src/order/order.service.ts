@@ -108,7 +108,17 @@ export class OrderService {
     return this.findOne(id);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} order`;
+  async remove(id: number) {
+    id = isValidNumber(id);
+
+    const { orderStatus } = await this.findOne(id);
+
+    if (orderStatus.id !== 1) {
+      throw new BadRequestException('This order cannot be removed because is has been approved already');
+    }
+
+    return this.prismaService.order.delete({
+      where: { id },
+    });
   }
 }
