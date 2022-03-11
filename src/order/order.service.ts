@@ -41,6 +41,20 @@ export class OrderService {
     return order;
   }
 
+  async findByUser(id: number) {
+    id = isValidNumber(id);
+
+    return this.prismaService.order.findMany({
+      where: {
+        userId: id,
+      },
+      include: {
+        orderItems: true,
+        orderStatus: true,
+      },
+    });
+  }
+
   async create({ userId, items }) {
     userId = isValidNumber(userId);
 
