@@ -1,7 +1,5 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
 import { OrderService } from './order.service';
-import { CreateOrderDto } from './dto/create-order.dto';
-import { UpdateOrderDto } from './dto/update-order.dto';
 
 @Controller('orders')
 export class OrderController {
@@ -17,14 +15,19 @@ export class OrderController {
     return this.orderService.findOne(+id);
   }
 
-  @Post()
-  create(@Body() createOrderDto: CreateOrderDto) {
-    return this.orderService.create(createOrderDto);
+  @Get('/user/:id')
+  findByUser(@Param('id') id) {
+    return this.orderService.findByUser(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateOrderDto: UpdateOrderDto) {
-    return this.orderService.update(+id, updateOrderDto);
+  @Post()
+  create(@Body() body) {
+    return this.orderService.create(body);
+  }
+
+  @Put(':id/update-status')
+  updateStatus(@Param('id') id, @Body('statusId') statusId) {
+    return this.orderService.updateStatus({ id: +id, statusId: +statusId });
   }
 
   @Delete(':id')
