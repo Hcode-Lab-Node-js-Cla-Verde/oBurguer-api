@@ -3,6 +3,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 import { UserService } from 'src/user/user.service';
 import { OrderStatusService } from './order-status.service';
 import { isValidNumber } from 'src/utils';
+import { CreateOrderDto } from './dto/create-order.dto';
 import orderQuery from './queries/select-order';
 
 @Injectable()
@@ -46,7 +47,7 @@ export class OrderService {
     });
   }
 
-  async create({ userId, items }) {
+  async create({ userId, items }: CreateOrderDto) {
     userId = isValidNumber(userId);
 
     if (!items.length) {
