@@ -1,12 +1,17 @@
-import { AddressModule } from './address/address.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { PrismaModule } from './prisma/prisma.module';
-import { UserModule } from './user/user.module';
+import { IngredientsController } from './ingredients/ingredients.controller';
+import { IngredientsModule } from './ingredients/ingredients.module';
+// import { UserModule } from './user/user.module';
 
 @Module({
-  imports: [
-    AddressModule, PrismaModule, UserModule],
-  controllers: [AppController],
+    imports: [
+        IngredientsModule,
+        PrismaModule,
+    ],
+    controllers: [
+        AppController
+    ],
 })
 export class AppModule { }
