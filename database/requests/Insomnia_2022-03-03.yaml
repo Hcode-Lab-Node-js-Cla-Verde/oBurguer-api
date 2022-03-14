@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2022-03-10T01:50:12.986Z
+__export_date: 2022-03-11T23:10:51.409Z
 __export_source: insomnia.desktop.app:v2022.1.1
 resources:
   - _id: req_63dbb6928ff34e9a833ea389772251cb
@@ -44,9 +44,9 @@ resources:
     _type: workspace
   - _id: req_99f066a99ac74efeb0ed878b9ab7528b
     parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1646876943520
+    modified: 1647037354021
     created: 1646876630537
-    url: "{{ _.base_url }}/orders/"
+    url: "{{ _.base_url }}/orders/9"
     name: Show
     description: ""
     method: GET
@@ -55,6 +55,116 @@ resources:
     headers: []
     authentication: {}
     metaSortKey: -1646783293120
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_77db56e0016c4895894c597cdb366526
+    parentId: fld_f728d9f686964e40a9013f6c695edcdc
+    modified: 1647037402010
+    created: 1647036410027
+    url: "{{ _.base_url }}/orders/user/1"
+    name: Show by user
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646783293095
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_8b11a6b878744c5a8069fc680125b7d5
+    parentId: fld_f728d9f686964e40a9013f6c695edcdc
+    modified: 1647037269492
+    created: 1646950644628
+    url: "{{ _.base_url }}/orders"
+    name: Create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"userId": 1,
+        	"items": [
+        		{
+        			"name": "Hamburguer 1",
+        			"ingredients": [3, 4, 6]
+        		},
+        		{
+        			"ingredients": [1, 4, 7]
+        		}
+        	]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_349528a669b140e898c00196e1ab0d95
+    authentication: {}
+    metaSortKey: -1646783293070
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5b4aa740088f48a9abd836b818624dcf
+    parentId: fld_f728d9f686964e40a9013f6c695edcdc
+    modified: 1647037373083
+    created: 1646958968072
+    url: "{{ _.base_url }}/orders/9/update-status"
+    name: Update status
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_318cd215384140d4abf480bff3514130
+          name: statusId
+          value: "2"
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_349528a669b140e898c00196e1ab0d95
+    authentication: {}
+    metaSortKey: -1646737272418.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ac744fb1138c47b9851ec47df51344e5
+    parentId: fld_f728d9f686964e40a9013f6c695edcdc
+    modified: 1647040003516
+    created: 1647039829820
+    url: "{{ _.base_url }}/orders/1"
+    name: Remove
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646737272368.5
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
