@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
 import { PrismaService } from 'src/prisma/prisma.service';
@@ -8,7 +8,7 @@ export class UserService {
 
   constructor(private prismaService: PrismaService) {}
 
-  async findById(id: number) {
+  async findById(id: number, hash = false) {
     id = Number(id);
 
     if (isNaN(id)) {
@@ -16,17 +16,13 @@ export class UserService {
     }
 
     const user = await this.prismaService.user.findUnique({
-      where: { id },
+      where: {
+        id,
+      },
       include: {
         persons: true,
       },
     });
-
-    if (!user) {
-      throw new BadRequestException('User not found');
-    }
-
-    delete user.password;
 
     return user;
   }
@@ -37,14 +33,16 @@ export class UserService {
     }
 
     const user = await this.prismaService.user.findUnique({
-      where: { email },
+      where: {
+        email,
+      },
       include: {
         persons: true,
       },
     });
 
     if (!user) {
-      throw new BadRequestException('User not found');
+      throw new NotFoundException('User not found');
     }
 
     delete user.password;
@@ -52,7 +50,14 @@ export class UserService {
     return user;
   }
 
-  async create({ name, email, password }: { name: string, email: string, password: string}) {
+  async create({ 
+    name,
+    email, 
+    password 
+  }: { 
+    name: string, 
+    email: string, 
+    password: string}) {
     if (!name) {
       throw new BadRequestException('Name is required');
     }
@@ -93,7 +98,15 @@ export class UserService {
     return userCreated;
   }
 
-  async update(id: number, { name, email }:{ name?: string, email?: string }) {
+  async update(
+    id: number, 
+    { 
+      name,
+      email 
+    }:{ 
+      name?: string, 
+      email?: string 
+    }) {
     id = Number(id);
 
     if (isNaN(id)) {
