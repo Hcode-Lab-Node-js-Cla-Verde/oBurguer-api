@@ -21,7 +21,7 @@ export class IngredientService {
     });
   }
 
-  async create(type_id: number,
+  async create(typeId: number,
     { name, price, available }: CreateIngredientsDto
   ) {
     price = isValidNumber(price);
@@ -32,7 +32,7 @@ export class IngredientService {
         name,
         price,
         available,
-        type_id,
+        typeId,
       },
     });
    
