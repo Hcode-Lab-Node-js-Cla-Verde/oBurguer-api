@@ -1,8 +1,8 @@
-import { MailService } from './mail.service';
 import { Module } from '@nestjs/common';
-import { MailerModule } from '@nestjs-modules/mailer';
 import { resolve } from 'path';
 import { PugAdapter } from '@nestjs-modules/mailer/dist/adapters/pug.adapter';
+import { MailerModule } from '@nestjs-modules/mailer';
+import { MailService } from './mail.service';
 
 @Module({
   imports: [
@@ -18,7 +18,7 @@ import { PugAdapter } from '@nestjs-modules/mailer/dist/adapters/pug.adapter';
           },
         },
         defaults: {
-          from: `O Burguer <${process.env.MAIL_FROM}>`,
+          from: `OBurguer <${process.env.MAIL_FROM}>`,
         },
         template: {
           dir: resolve(__dirname, 'templates'),
@@ -34,4 +34,4 @@ import { PugAdapter } from '@nestjs-modules/mailer/dist/adapters/pug.adapter';
   providers: [MailService],
   exports: [MailService],
 })
-export class MailModule {}
+export class MailModule { }
