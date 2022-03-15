@@ -21,8 +21,8 @@ export class IngredientService {
     });
   }
 
-  async create(type_id: number, {
-    name, price, available }: CreateIngredientsDto
+  async create(type_id: number,
+    { name, price, available }: CreateIngredientsDto
   ) {
     price = isValidNumber(price);
     available = isValidNumber(available);
