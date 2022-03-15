@@ -1,4 +1,3 @@
-import { query } from "express";
 import { MigrationInterface, QueryRunner, Table, TableForeignKey } from "typeorm";
 import { columnCreatedAt, columnId, columnUpdatedAt} from "../columns";
 import { columnVarchar } from "../columns/columnVarchar";

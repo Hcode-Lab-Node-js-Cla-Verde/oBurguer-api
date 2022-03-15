@@ -1,65 +1,51 @@
-import { MigrationInterface, QueryRunner, Table, TableForeignKey, } from "typeorm";
+import { MigrationInterface, QueryRunner, Table, TableForeignKey } from "typeorm";
+import { columnCreatedAt, columnId, columnUpdatedAt} from "../columns";
 
 export class ingredients1646354789855 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(new Table({
             name: "ingredient_types",
-            columns: [{
-                name: "id",
-                type: "int",
-                isPrimary: true,
-                isGenerated: true,
-                generationStrategy: "increment"
-            }, {
-                name: "name",
-                type: "varchar",
-                length: "250",
-                isNullable: false,
-            }]
+            columns: [
+                columnId,
+                {
+                    name: "name",
+                    type: "varchar",
+                    length: "250",
+                },
+                columnCreatedAt,
+                columnUpdatedAt,
+            ],
         }));
 
         await queryRunner.createTable(new Table({
             name: "ingredients",
-            columns: [{
-                name: "id",
-                type: "int",
-                isPrimary: true,
-                isGenerated: true,
-                generationStrategy: "increment"
-            }, {
-                name: "name",
-                type: "varchar",
-                length: "250",
-                isNullable: false,
-            }, {
-                name: "price",
-                type: "decimal",
-                precision: 10,
-                scale: 2,
-                default: 0,
-            }, {
-                name: 'type_id',
-                type: 'int',
-                isNullable: false,
-            }, {
-                name: "available",
-                type: "tinyint",
-                isNullable: false,
-            }, {
-                name: "createdAt",
-                type: "datetime",
-                default: "CURRENT_TIMESTAMP"
-            }, {
-                name: "updatedAt",
-                type: "datetime",
-                default: "CURRENT_TIMESTAMP"
-            }]
-
+            columns: [
+                columnId,
+                {
+                    name: "name",
+                    type: "varchar",
+                    length: "250",
+                }, {
+                    name: "price",
+                    type: "decimal",
+                    precision: 10,
+                    scale: 2,
+                    default: 0,
+                }, {
+                    name: 'typeId',
+                    type: 'int',
+                }, {
+                    name: "available",
+                    type: "tinyint",
+                },
+                columnCreatedAt,
+                columnUpdatedAt,
+            ],
         }));
 
         await queryRunner.createForeignKey('ingredients', new TableForeignKey({
-            columnNames: ['type_id'],
+            columnNames: ['typeId'],
             referencedColumnNames: ['id'],
             referencedTableName: 'ingredient_types',
             name: 'FK_ingredients_ingredients_types',
@@ -113,16 +99,13 @@ export class ingredients1646354789855 implements MigrationInterface {
         for (let index = 0; index < ingredients.length; index++) {
             const { name, price, typeId } = ingredients[index];
 
-            await queryRunner.query(`INSERT INTO ingredients(name, price, type_id, available) VALUES ('${name}', '${price}', ${typeId}, 1);`);
+            await queryRunner.query(`INSERT INTO ingredients(name, price, typeId, available) VALUES ('${name}', '${price}', ${typeId}, 1);`);
         }
-
     }
-
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropForeignKey("ingredients", "FK_ingredients_ingredients_types")
         await queryRunner.dropTable("ingredients")
         await queryRunner.dropTable("ingredient_types")
     }
-
 }
