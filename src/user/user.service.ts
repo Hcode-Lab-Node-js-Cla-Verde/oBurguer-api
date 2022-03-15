@@ -6,13 +6,13 @@ import { PrismaService } from 'src/prisma/prisma.service';
 @Injectable()
 export class UserService {
 
-  constructor(private prismaService: PrismaService) {}
+  constructor(private prismaService: PrismaService) { }
 
   async findById(id: number, hash = false) {
     id = Number(id);
 
     if (isNaN(id)) {
-      throw new BadRequestException('Id is required');
+      throw new BadRequestException('ID is required');
     }
 
     const user = await this.prismaService.user.findUnique({
@@ -23,6 +23,14 @@ export class UserService {
         persons: true,
       },
     });
+
+    if (!hash) {
+      delete user.password;
+    }
+
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
 
     return user;
   }
@@ -50,14 +58,15 @@ export class UserService {
     return user;
   }
 
-  async create({ 
+  async create({
     name,
-    email, 
-    password 
-  }: { 
-    name: string, 
-    email: string, 
-    password: string}) {
+    email,
+    password
+  }: {
+    name: string,
+    email: string,
+    password: string
+  }) {
     if (!name) {
       throw new BadRequestException('Name is required');
     }
@@ -72,7 +81,7 @@ export class UserService {
 
     try {
       user = await this.findByEmail(email);
-    } catch (error) {}
+    } catch (error) { }
 
     if (user) {
       throw new BadRequestException('Email already exists');
@@ -99,55 +108,58 @@ export class UserService {
   }
 
   async update(
-    id: number, 
-    { 
+    id: number,
+    {
       name,
-      email 
-    }:{ 
-      name?: string, 
-      email?: string 
-    }) {
+      email,
+      photo,
+    }: {
+      name?: string;
+      email?: string;
+      photo?: string;
+    },
+  ) {
     id = Number(id);
 
     if (isNaN(id)) {
-      throw new BadRequestException('Id is not a number');
+      throw new BadRequestException('ID is not a number');
     }
 
-    const personData = {} as Prisma.PersonUpdateInput;
-    const userData = {} as Prisma.UserUpdateInput;
+    const dataPerson = {} as Prisma.PersonUpdateInput;
+    const dataUser = {} as Prisma.UserUpdateInput;
 
     if (name) {
-      personData.name = name;
+      dataPerson.name = name;
     }
 
     if (email) {
-      try {
-        await this.findByEmail(email);
-      }
-      catch (error) {
-        userData.email = email;
-      }      
+      dataUser.email = email;
+    }
+
+    if (photo) {
+      dataUser.photo = photo;
     }
 
     const user = await this.findById(id);
 
-    if (personData) {
+    if (dataPerson) {
       await this.prismaService.person.update({
         where: {
           id: user.personId,
         },
-        data: personData,
+        data: dataPerson,
       });
     }
-    if (userData) {
+
+    if (dataUser) {
       await this.prismaService.user.update({
         where: {
           id,
         },
-        data: userData,
-      });  
+        data: dataUser,
+      });
     }
-    
+
     return this.findById(id);
   }
 }

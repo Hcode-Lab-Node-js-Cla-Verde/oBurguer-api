@@ -3,24 +3,23 @@ import { UserService } from './user.service';
 
 @Controller('users')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(private userService: UserService) { }
 
   @Get()
-  findByEmail(@Query('email') email: string) {
+  async findByEmail(@Query('email') email: string) {
     return this.userService.findByEmail(email);
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.userService.findById(+id);
+  async findOne(@Param('id') id) {
+    return this.userService.findById(id);
   }
 
   @Put(':id')
-  update(
+  async update(
     @Param('id') id,
-    @Body('name') name,
-    @Body('email') email,
+    @Body() body,
   ) {
-    return this.userService.update(+id, { name, email });
+    return this.userService.update(id, body);
   }
 }
