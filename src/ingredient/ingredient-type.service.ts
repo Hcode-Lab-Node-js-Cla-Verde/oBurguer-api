@@ -1,16 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { isValidNumber } from 'src/utils/';
-import { CreateIngredientsDto } from './dto/create-ingredients.dto';
+import { CreateIngredientDto } from './dto/create-ingredient.dto';
 
 @Injectable()
 export class IngredientTypeService {
 
   constructor(private prismaService: PrismaService) {} 
 
-  create(id: number,
-    { name }: CreateIngredientsDto
-  ) {
+  create(id: number, { name }: CreateIngredientDto) {
     return this.prismaService.ingredientType.create({
       data: {
         name: name,

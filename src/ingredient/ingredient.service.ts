@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { isValidNumber } from 'src/utils';
-import { CreateIngredientsDto } from './dto/create-ingredients.dto';
+import { CreateIngredientDto } from './dto/create-ingredient.dto';
 @Injectable()
 export class IngredientService {
 
@@ -21,8 +21,8 @@ export class IngredientService {
     });
   }
 
-  async create(type_id: number,
-    { name, price, available }: CreateIngredientsDto
+  async create(typeId: number,
+    { name, price, available }: CreateIngredientDto
   ) {
     price = isValidNumber(price);
     available = isValidNumber(available);
@@ -32,7 +32,7 @@ export class IngredientService {
         name,
         price,
         available,
-        type_id,
+        typeId,
       },
     });
    
