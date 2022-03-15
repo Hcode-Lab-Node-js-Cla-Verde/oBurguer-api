@@ -41,13 +41,13 @@ model User {
 
 model Address {
   id         Int       @id @default(autoincrement())
-  street     String    @db.VarChar(255)
+  street     String    @db.VarChar(250)
   number     String?   @db.VarChar(16)
-  complement String?   @db.VarChar(255)
-  district   String    @db.VarChar(255)
-  city       String    @db.VarChar(255)
-  state      String    @db.VarChar(255)
-  country    String    @db.VarChar(255)
+  complement String?   @db.VarChar(250)
+  district   String    @db.VarChar(250)
+  city       String    @db.VarChar(250)
+  state      String    @db.VarChar(250)
+  country    String    @db.VarChar(250)
   zipcode    String    @db.VarChar(8)
   personId   Int
   createdAt  DateTime  @default(now()) @db.DateTime(0)
@@ -135,11 +135,13 @@ model Order {
   @@map("orders")
 }
 
-model password_recovery {
+model PasswordRecovery {
   id        Int       @id @default(autoincrement())
   token     String    @db.VarChar(250)
   user_id   Int
   resetAt   DateTime  @default(now()) @db.DateTime(0)
   createdAt DateTime  @default(now()) @db.DateTime(0)
   updatedAt DateTime? @default(now()) @db.DateTime(0)
+
+  @@map("password_recovery")
 }
