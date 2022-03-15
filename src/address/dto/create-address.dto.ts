@@ -31,7 +31,4 @@ export class CreateAddressDto {
     @IsString()
     @MaxLength(8)
     zipcode: string;
-
-    personId: number;
-
 }
