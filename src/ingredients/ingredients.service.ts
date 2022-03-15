@@ -1,22 +1,50 @@
-/*
-https://docs.nestjs.com/providers#services
-*/
-
 import { Injectable } from '@nestjs/common';
-
+import { PrismaService } from 'src/prisma/prisma.service';
+import { isValidNumber } from 'src/utils';
+import { CreateIngredientsDto } from './dto/create-ingredients.dto';
 @Injectable()
 export class IngredientsService {
 
-    async findAll() {}
+  constructor(
+    private prisma: PrismaService,
+  ) {}
 
-    async findOne(id: number) {}
+  async findAll() { 
+    return this.prisma.ingredient.findMany();
+  }
 
-    async create() {}
+  async findOne(id: number) {
+    return this.prisma.ingredient.findUnique({
+      where: {
+        id: isValidNumber(id),
+      },
+    });
+  }
 
-    async update() {}
+  async create(type_id: number, {
+    name, price, available }: CreateIngredientsDto
+  ) {
+    price = isValidNumber(price);
+    available = isValidNumber(available);
 
-    async delete(id: number) {}
-    
+    const ingredients = await this.prisma.ingredient.create({
+      data: {
+        name,
+        price,
+        available,
+        type_id,
+      },
+    });
+   
+    return ingredients;
+  }
+
+  async remove(id: number) {
+    return this.prisma.ingredient.delete({
+      where: {
+        id: isValidNumber(id),
+      },
+    });
+  }
 }
-
  

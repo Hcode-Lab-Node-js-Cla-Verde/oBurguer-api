@@ -1,10 +1,32 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Get, Delete, Param } from '@nestjs/common';
 import { IngredientsService } from './ingredients.service';
+import { CreateIngredientsDto } from './dto/create-ingredients.dto';
 
 @Controller("ingredients")
 export class IngredientsController {
-    constructor(private ingredientService: IngredientsService) {}
+  constructor(private ingredientService: IngredientsService) {}
 
-    // @Post
-    // create(@Body() )
+  @Get()
+  async list() {
+    return this.ingredientService.findAll();
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.ingredientService.findOne(+id);
+  }
+
+  @Post()
+  async createIngredient(
+    @Body() data: CreateIngredientsDto,
+    @Body() user,
+  ) {
+    return this.ingredientService.create(user.type_id, data);
+  }
+
+  @Delete(':id')
+  async remove(@Param('id') id: number,
+  ) {
+    return this.ingredientService.remove(id);
+  }
 }
