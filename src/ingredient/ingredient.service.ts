@@ -3,7 +3,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 import { isValidNumber } from 'src/utils';
 import { CreateIngredientsDto } from './dto/create-ingredients.dto';
 @Injectable()
-export class IngredientsService {
+export class IngredientService {
 
   constructor(
     private prisma: PrismaService,

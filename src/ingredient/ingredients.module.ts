@@ -1,6 +1,6 @@
-import { IngredientsService } from './ingredients.service';
+import { IngredientService } from './ingredient.service';
 import { Module } from '@nestjs/common';
-import { IngredientsController } from './ingredients.controller';
+import { IngredientController } from './ingredient.controller';
 import { PrismaModule } from 'src/prisma/prisma.module';
 import { IngredientTypeService } from './ingredient-type.service';
 
@@ -9,11 +9,11 @@ import { IngredientTypeService } from './ingredient-type.service';
     PrismaModule,
   ],
   controllers: [
-    IngredientsController,
+    IngredientController,
   ],
   providers: [
-    IngredientsService,
+    IngredientService,
     IngredientTypeService
   ],
 })
-export class IngredientsModule {}
+export class IngredientModule {}

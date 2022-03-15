@@ -1,10 +1,10 @@
 import { Body, Controller, Post, Get, Delete, Param } from '@nestjs/common';
-import { IngredientsService } from './ingredients.service';
+import { IngredientService } from './ingredient.service';
 import { CreateIngredientsDto } from './dto/create-ingredients.dto';
 
-@Controller("ingredients")
-export class IngredientsController {
-  constructor(private ingredientService: IngredientsService) {}
+@Controller('ingredients')
+export class IngredientController {
+  constructor(private ingredientService: IngredientService) {}
 
   @Get()
   async list() {
@@ -12,12 +12,12 @@ export class IngredientsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id) {
     return this.ingredientService.findOne(+id);
   }
 
   @Post()
-  async createIngredient(
+  async create(
     @Body() data: CreateIngredientsDto,
     @Body() user,
   ) {
@@ -25,8 +25,7 @@ export class IngredientsController {
   }
 
   @Delete(':id')
-  async remove(@Param('id') id: number,
-  ) {
-    return this.ingredientService.remove(id);
+  async remove(@Param('id') id) {
+    return this.ingredientService.remove(+id);
   }
 }
