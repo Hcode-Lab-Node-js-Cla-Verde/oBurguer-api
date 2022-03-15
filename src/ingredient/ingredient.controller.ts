@@ -1,6 +1,6 @@
 import { Body, Controller, Post, Get, Delete, Param } from '@nestjs/common';
 import { IngredientService } from './ingredient.service';
-import { CreateIngredientsDto } from './dto/create-ingredients.dto';
+import { CreateIngredientDto } from './dto/create-ingredient.dto';
 
 @Controller('ingredients')
 export class IngredientController {
@@ -18,7 +18,7 @@ export class IngredientController {
 
   @Post()
   async create(
-    @Body() data: CreateIngredientsDto,
+    @Body() data: CreateIngredientDto,
     @Body() user,
   ) {
     return this.ingredientService.create(user.type_id, data);
