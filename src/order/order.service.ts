@@ -99,6 +99,9 @@ export class OrderService {
 
     await this.orderStatusService.findOne(statusId);
 
+    // Checks if order exists
+    await this.findOne(id);
+
     await this.prismaService.order.update({
       where: { id },
       data: {
