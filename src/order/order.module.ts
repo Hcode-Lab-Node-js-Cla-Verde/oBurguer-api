@@ -7,7 +7,11 @@ import { UserModule } from 'src/user/user.module';
 import { AuthModule } from 'src/auth/auth.module';
 
 @Module({
-  imports: [PrismaModule, UserModule, AuthModule],
+  imports: [
+    PrismaModule,
+    UserModule,
+    AuthModule,
+  ],
   controllers: [OrderController],
   providers: [OrderService, OrderStatusService],
 })

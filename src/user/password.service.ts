@@ -10,7 +10,7 @@ export class PasswordService {
     private mailService: MailService,
     private userService: UserService,
     private prisma: PrismaService
-  ) { }
+  ) {}
 
   async checkPassord(id: number, password: string) {
     const user = await this.userService.findById(id, true);
@@ -19,8 +19,8 @@ export class PasswordService {
 
     if (!checked) {
       throw new UnauthorizedException("Email or password is incorrect");
-
     }
+
     return true;
   }
 
@@ -66,5 +66,4 @@ export class PasswordService {
 
     return this.updatePassword(id, newPassword);
   }
-
 }
