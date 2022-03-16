@@ -1,4 +1,4 @@
-import { BadRequestException, Body, Controller, Get, Post, Put, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Put, UseGuards } from '@nestjs/common';
 import { PasswordService } from 'src/user/password.service';
 import { User } from 'src/user/user.decorator';
 import { UserService } from 'src/user/user.service';
