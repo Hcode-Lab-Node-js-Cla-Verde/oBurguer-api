@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2022-03-16T01:39:00.766Z
+__export_date: 2022-03-16T23:52:36.610Z
 __export_source: insomnia.desktop.app:v2022.1.1
 resources:
   - _id: req_63dbb6928ff34e9a833ea389772251cb
@@ -44,16 +44,18 @@ resources:
     _type: workspace
   - _id: req_99f066a99ac74efeb0ed878b9ab7528b
     parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647037354021
+    modified: 1647471356438
     created: 1646876630537
-    url: "{{ _.base_url }}/orders/9"
+    url: "{{ _.base_url }}/orders/1"
     name: Show
     description: ""
     method: GET
     body: {}
     parameters: []
     headers: []
-    authentication: {}
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
     metaSortKey: -1646783293120
     isPrivate: false
     settingStoreCookies: true
@@ -65,7 +67,7 @@ resources:
     _type: request
   - _id: req_77db56e0016c4895894c597cdb366526
     parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647037402010
+    modified: 1647471592850
     created: 1647036410027
     url: "{{ _.base_url }}/orders/user/1"
     name: Show by user
@@ -74,7 +76,9 @@ resources:
     body: {}
     parameters: []
     headers: []
-    authentication: {}
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
     metaSortKey: -1646783293095
     isPrivate: false
     settingStoreCookies: true
@@ -86,7 +90,7 @@ resources:
     _type: request
   - _id: req_8b11a6b878744c5a8069fc680125b7d5
     parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647305299761
+    modified: 1647471669418
     created: 1646950644628
     url: "{{ _.base_url }}/orders"
     name: Create
@@ -112,7 +116,9 @@ resources:
       - name: Content-Type
         value: application/json
         id: pair_349528a669b140e898c00196e1ab0d95
-    authentication: {}
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
     metaSortKey: -1646783293070
     isPrivate: false
     settingStoreCookies: true
@@ -124,9 +130,9 @@ resources:
     _type: request
   - _id: req_5b4aa740088f48a9abd836b818624dcf
     parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647387990430
+    modified: 1647472520330
     created: 1646958968072
-    url: "{{ _.base_url }}/orders/9/update-status"
+    url: "{{ _.base_url }}/orders/3/update-status"
     name: Update status
     description: ""
     method: PUT
@@ -137,16 +143,14 @@ resources:
           name: statusId
           value: "2"
           description: ""
-        - id: pair_6dcf7d904075404ab07e719c70a364be
-          name: ""
-          value: ""
-          description: ""
     parameters: []
     headers:
       - name: Content-Type
         value: application/x-www-form-urlencoded
         id: pair_349528a669b140e898c00196e1ab0d95
-    authentication: {}
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
     metaSortKey: -1646737272418.5
     isPrivate: false
     settingStoreCookies: true
@@ -158,7 +162,7 @@ resources:
     _type: request
   - _id: req_ac744fb1138c47b9851ec47df51344e5
     parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647040003516
+    modified: 1647472680544
     created: 1647039829820
     url: "{{ _.base_url }}/orders/1"
     name: Remove
@@ -167,7 +171,9 @@ resources:
     body: {}
     parameters: []
     headers: []
-    authentication: {}
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
     metaSortKey: -1646737272368.5
     isPrivate: false
     settingStoreCookies: true
@@ -545,7 +551,7 @@ resources:
     _type: request_group
   - _id: req_fc016fde2b7144aaae58210f7d1b1d06
     parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
-    modified: 1647394655129
+    modified: 1647473316548
     created: 1647394068166
     url: "{{ _.base_url }}/addresses/2"
     name: Show by id
@@ -737,49 +743,20 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: req_dac58d5bbe4e42afadd934ceca5c19b2
-    parentId: fld_0e60a05891e34cc2afddbd92a76eca97
-    modified: 1646351524196
-    created: 1646351522746
-    url: "{{ _.base_url }}/"
-    name: List
-    description: ""
-    method: GET
-    body: {}
-    parameters: []
-    headers: []
-    authentication: {}
-    metaSortKey: -1645894019453.125
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: fld_0e60a05891e34cc2afddbd92a76eca97
-    parentId: wrk_3941404da02d4a9796dac8ba65a716fb
-    modified: 1646351520132
-    created: 1646351520132
-    name: Order statuses
-    description: ""
-    environment: {}
-    environmentPropertyOrder: null
-    metaSortKey: -1646351520132
-    _type: request_group
   - _id: req_44ea78fe2a1b416c88b3354eaf28f50d
     parentId: fld_8ff1f5841b0f486c8ef8279942477760
-    modified: 1646351499705
+    modified: 1647474090064
     created: 1646351495741
-    url: "{{ _.base_url }}/"
+    url: "{{ _.base_url }}/ingredients"
     name: List
     description: ""
     method: GET
     body: {}
     parameters: []
     headers: []
-    authentication: {}
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
     metaSortKey: -1645959356423.25
     isPrivate: false
     settingStoreCookies: true
@@ -799,6 +776,96 @@ resources:
     environmentPropertyOrder: null
     metaSortKey: -1646351492708
     _type: request_group
+  - _id: req_4055c44ce4fb49418f23dc7aea9df0c4
+    parentId: fld_8ff1f5841b0f486c8ef8279942477760
+    modified: 1647474091151
+    created: 1647474046568
+    url: "{{ _.base_url }}/ingredients/1"
+    name: Show by id
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1645943022180.7188
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d036e42c3d294e8b85592158596c283f
+    parentId: fld_8ff1f5841b0f486c8ef8279942477760
+    modified: 1647474130557
+    created: 1647474109277
+    url: "{{ _.base_url }}/ingredients/1"
+    name: Delete
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1645934855059.4531
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_08ff175f61cb4398ac6c7b2f920cb073
+    parentId: fld_8ff1f5841b0f486c8ef8279942477760
+    modified: 1647474101322
+    created: 1647473326816
+    url: "{{ _.base_url }}/ingredients"
+    name: Create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_ac749449f821457380840a1ee2399deb
+          name: name
+          value: Pão de Forma
+          description: ""
+        - id: pair_0a978b2128fa42a2bef743b27ed7e064
+          name: price
+          value: "12.65"
+          description: ""
+        - id: pair_0b013e0418334a078dd7bee7723fc7db
+          name: typeId
+          value: "1"
+          description: ""
+        - id: pair_f32729ac499548138a776c919281f7cc
+          name: available
+          value: "0"
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_40c5239b9c814ed78ee2a2695aeb6e6a
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1645926687938.1875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: env_bc66903b0301da7a93c3ab1d0b76588cf9295bec
     parentId: wrk_3941404da02d4a9796dac8ba65a716fb
     modified: 1646351256897
