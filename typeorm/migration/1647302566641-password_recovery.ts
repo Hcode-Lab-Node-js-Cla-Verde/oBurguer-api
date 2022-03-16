@@ -4,30 +4,24 @@ import {
   Table,
   TableForeignKey,
 } from 'typeorm';
-import { columnCreatedAt, columnId, columnUpdatedAt } from '../columns';
+import { columnCreatedAt, columnId, columnUpdatedAt, columnVarchar } from '../columns';
 
 export class passwordRecovery1647302566641 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'password_recovery',
+        name: 'password_recoveries',
         columns: [
           columnId,
+          columnVarchar('token', '250'),
           {
-            name: 'token',
-            type: 'varchar',
-            length: '250',
-            isNullable: false,
-          },
-          {
-            name: 'user_id',
+            name: 'userId',
             type: 'int',
-            isNullable: false,
           },
           {
             name: 'resetAt',
             type: 'datetime',
-            default: 'CURRENT_TIMESTAMP',
+            isNullable: true,
           },
           columnCreatedAt,
           columnUpdatedAt,
@@ -36,18 +30,18 @@ export class passwordRecovery1647302566641 implements MigrationInterface {
     );
 
     await queryRunner.createForeignKey(
-      'password_recovery',
+      'password_recoveries',
       new TableForeignKey({
-        columnNames: ['id'],
-        referencedColumnNames: ['user_id'],
+        columnNames: ['userId'],
+        referencedColumnNames: ['id'],
         referencedTableName: 'users',
-        name: 'FK_password_recovery_users',
+        name: 'FK_password_recoveries_users',
         onDelete: 'CASCADE',
       }),
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('password_recovery');
+    await queryRunner.dropTable('password_recoveries');
   }
 }
