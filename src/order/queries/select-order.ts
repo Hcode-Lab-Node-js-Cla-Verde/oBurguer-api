@@ -21,7 +21,7 @@ export default {
           ingredients: {
             select: {
               name: true,
-              ingredientTypes: {
+              ingredient_types: {
                 select: {
                   name: true,
                 },
