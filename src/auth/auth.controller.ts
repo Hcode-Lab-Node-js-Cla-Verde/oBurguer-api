@@ -25,12 +25,9 @@ export class AuthController {
 
   @Post()
   async verifyEmail(@Body('email') email) {
-    try {
-      await this.userService.findByEmail(email);
-      return { exists: true };
-    } catch (e) {
-      return { exists: false };
-    }
+    await this.userService.findByEmail(email);
+
+    return { exists: true };
   }
 
   @Post('register')
