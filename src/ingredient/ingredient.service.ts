@@ -1,12 +1,14 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { isValidNumber } from 'src/utils';
 import { CreateIngredientDto } from './dto/create-ingredient.dto';
+import { IngredientTypeService } from './ingredient-type.service';
 @Injectable()
 export class IngredientService {
 
   constructor(
     private prisma: PrismaService,
+    private ingredientType: IngredientTypeService,
   ) {}
 
   async findAll() { 
@@ -21,22 +23,22 @@ export class IngredientService {
     });
   }
 
-  async create(typeId: number,
-    { name, price, available }: CreateIngredientDto
-  ) {
-    price = isValidNumber(price);
-    available = isValidNumber(available);
+  async create({ name, price, available, typeId }: CreateIngredientDto) {
 
-    const ingredients = await this.prisma.ingredient.create({
+    const ingredientType = await this.ingredientType.findOne(typeId);
+
+    if (!ingredientType) {
+      throw new BadRequestException('Ingredient type not found');
+    }
+
+    return await this.prisma.ingredient.create({
       data: {
         name,
-        price,
-        available,
-        typeId,
+        price: isValidNumber(price),
+        available: isValidNumber(available),
+        typeId: isValidNumber(typeId),
       },
     });
-   
-    return ingredients;
   }
 
   async remove(id: number) {
