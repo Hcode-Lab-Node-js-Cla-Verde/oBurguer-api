@@ -27,15 +27,17 @@ export class AddressService {
     }
 
     async findOne(id: number) {
-        try {
-            return this.prisma.address.findUnique({
-                where: {
-                    id: isValidNumber(id),
-                },
-            });
-        } catch (error) {
-            throw new NotFoundException(error.message);
+        const address = await this.prisma.address.findUnique({
+            where: {
+                id: isValidNumber(id),
+            },
+        });
+
+        if (!address) {
+            throw new BadRequestException("Address not found");
         }
+
+        return address;
     }
 
     async findByPerson(personId: number) {
