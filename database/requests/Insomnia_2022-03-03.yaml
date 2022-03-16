@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2022-03-15T00:49:21.382Z
+__export_date: 2022-03-16T01:39:00.766Z
 __export_source: insomnia.desktop.app:v2022.1.1
 resources:
   - _id: req_63dbb6928ff34e9a833ea389772251cb
@@ -124,7 +124,7 @@ resources:
     _type: request
   - _id: req_5b4aa740088f48a9abd836b818624dcf
     parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647037373083
+    modified: 1647387990430
     created: 1646958968072
     url: "{{ _.base_url }}/orders/9/update-status"
     name: Update status
@@ -136,6 +136,10 @@ resources:
         - id: pair_318cd215384140d4abf480bff3514130
           name: statusId
           value: "2"
+          description: ""
+        - id: pair_6dcf7d904075404ab07e719c70a364be
+          name: ""
+          value: ""
           description: ""
     parameters: []
     headers:
@@ -173,19 +177,21 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: req_78446d964b5b4882b91e63edfea1576f
+  - _id: req_719b8eff883c4f4395b98a8d5ad6ac6d
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1646351571414
-    created: 1646351546603
-    url: "{{ _.base_url }}/"
-    name: List
+    modified: 1647393940264
+    created: 1647393882489
+    url: "{{ _.base_url }}/auth/online"
+    name: Me
     description: ""
     method: GET
     body: {}
     parameters: []
     headers: []
-    authentication: {}
-    metaSortKey: -1645861350968.0625
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1647393882489
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -204,6 +210,208 @@ resources:
     environmentPropertyOrder: null
     metaSortKey: -1646351563700
     _type: request_group
+  - _id: req_1052b7c730db438a9f3c64aa0f5be925
+    parentId: fld_eb11f91941004adf8cd374835f1d6eab
+    modified: 1647393938593
+    created: 1647390084096
+    url: "{{ _.base_url }}/auth/login"
+    name: Login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_53d30928dd8e42839f3921a678efc2fb
+          name: email
+          value: lucas.codev@gmail.com
+          description: ""
+        - id: pair_daf9952273fc436eb91cdae360e326b3
+          name: password
+          value: "321"
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_a6a5458844a146bb96e5e7ce1d99d162
+    authentication: {}
+    metaSortKey: -1645861351068.0625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e1f65930fbaf4e038f151bca0a78fa9a
+    parentId: fld_eb11f91941004adf8cd374835f1d6eab
+    modified: 1647393595412
+    created: 1647388543908
+    url: "{{ _.base_url }}/auth/register"
+    name: Register
+    description: ""
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_f028a909b2424a6abbd319a2dc382547
+          name: name
+          value: Lucas
+          description: ""
+        - id: pair_14a05859d9cd4d91b13a514c2803c054
+          name: email
+          value: lucas.codev@gmail.com
+          description: ""
+        - id: pair_e1fed5f58b064c479d4f6b5707ecd905
+          name: password
+          value: "123"
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_e418a9253a754675b3d314bb4442d6b9
+    authentication: {}
+    metaSortKey: -1645861351018.0625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_837722fb529c430bbcb754a655f5c9aa
+    parentId: fld_eb11f91941004adf8cd374835f1d6eab
+    modified: 1647393803443
+    created: 1647389666901
+    url: "{{ _.base_url }}/auth/profile"
+    name: Update
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_f028a909b2424a6abbd319a2dc382547
+          name: name
+          value: Lucas
+          description: ""
+        - id: pair_02ab7921f3954e099b80d6134ff945da
+          name: email
+          value: versos@gmail.com
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_e418a9253a754675b3d314bb4442d6b9
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1645861350993.0625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_78446d964b5b4882b91e63edfea1576f
+    parentId: fld_eb11f91941004adf8cd374835f1d6eab
+    modified: 1647393850660
+    created: 1646351546603
+    url: "{{ _.base_url }}/auth"
+    name: Verify user
+    description: ""
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_661ee809bf76429f89d052826de64752
+          name: email
+          value: john.doe@gmail.com
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_bcc5f504d69e4ead8b372b4dfcd0b0d3
+    authentication: {}
+    metaSortKey: -1645861350968.0625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_4e32ab275f2a457aa014e609e824f39f
+    parentId: fld_eb11f91941004adf8cd374835f1d6eab
+    modified: 1647393599241
+    created: 1647390884885
+    url: "{{ _.base_url }}/auth/forget"
+    name: Password recovery
+    description: ""
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_8d7b530b5ccc44c1adee11235658901c
+          name: email
+          value: lucas.codev@gmail.com
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_b9f48ca267be425d85f128c27f18d9c1
+    authentication: {}
+    metaSortKey: -1645861350918.0625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6f6ee1e7929a45d4a695bb97077424b1
+    parentId: fld_eb11f91941004adf8cd374835f1d6eab
+    modified: 1647393615877
+    created: 1647391628669
+    url: "{{ _.base_url }}/auth/password-reset"
+    name: Password reset
+    description: ""
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_7fc329744e154c40a2f4b79092f80c3b
+          name: password
+          value: "321"
+          description: ""
+        - id: pair_1579a28f09ac4eef8892ad465da02b21
+          name: token
+          value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjQ3MzkzNTk4LCJleHAiOjE2NDczOTUzOTh9.7Go7-bIUE90atnGZevJg3hcy18zYavJDj9GfMIloMXk
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_b9f48ca267be425d85f128c27f18d9c1
+    authentication: {}
+    metaSortKey: -1645853183821.7969
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_371e4db859f64785aa33e5388872ca7e
     parentId: fld_585af2c03e164cc98bf74281cfbda65c
     modified: 1646359457769
@@ -300,16 +508,22 @@ resources:
     _type: request
   - _id: req_8f5ea11fb3074ff78bd19a51ee547684
     parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
-    modified: 1646351455756
+    modified: 1647394649761
     created: 1646351454490
-    url: "{{ _.base_url }}/"
+    url: "{{ _.base_url }}/addresses"
     name: List
     description: ""
     method: GET
     body: {}
     parameters: []
-    headers: []
-    authentication: {}
+    headers:
+      - id: pair_4d079cdf141b45da9377d62b7d06bdc5
+        name: ""
+        value: ""
+        description: ""
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
     metaSortKey: -1646090030363.5
     isPrivate: false
     settingStoreCookies: true
@@ -329,19 +543,25 @@ resources:
     environmentPropertyOrder: null
     metaSortKey: -1646351544272
     _type: request_group
-  - _id: req_9149434eea1e4d5484cadc84caad70b8
-    parentId: fld_8750af770b054cd796d0447e462bfabb
-    modified: 1646359214503
-    created: 1646351569854
-    url: "{{ _.base_url }}/"
-    name: List
+  - _id: req_fc016fde2b7144aaae58210f7d1b1d06
+    parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
+    modified: 1647394655129
+    created: 1647394068166
+    url: "{{ _.base_url }}/addresses/2"
+    name: Show by id
     description: ""
     method: GET
     body: {}
     parameters: []
-    headers: []
-    authentication: {}
-    metaSortKey: -1645845016725.5312
+    headers:
+      - id: pair_4d079cdf141b45da9377d62b7d06bdc5
+        name: ""
+        value: ""
+        description: ""
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1646024693393.375
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -350,16 +570,173 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: fld_8750af770b054cd796d0447e462bfabb
-    parentId: wrk_3941404da02d4a9796dac8ba65a716fb
-    modified: 1646351537796
-    created: 1646351537796
-    name: Orders
+  - _id: req_9f17b7b1c1e3449d811d3fe46be2189d
+    parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
+    modified: 1647394316499
+    created: 1647394106947
+    url: "{{ _.base_url }}/addresses/1"
+    name: Show by person
     description: ""
-    environment: {}
-    environmentPropertyOrder: null
-    metaSortKey: -1646351537796
-    _type: request_group
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_4d079cdf141b45da9377d62b7d06bdc5
+        name: ""
+        value: ""
+        description: ""
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1645992024908.3125
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_1254fcc8b043437fba20ffafcde4d009
+    parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
+    modified: 1647394663547
+    created: 1647394150371
+    url: "{{ _.base_url }}/addresses"
+    name: Create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_a498c64ccc4b44d9aea72ca7799f046a
+          name: street
+          value: Rua do Limoeiro
+          description: ""
+        - id: pair_ac9f281cea244391944ff3eb345360cc
+          name: number
+          value: "123"
+          description: ""
+        - id: pair_08834b1028354cbab6ae0fbeece2a78b
+          name: complement
+          value: Bonito
+          description: ""
+        - id: pair_ba24926d6d75471b9adce1139edd00f5
+          name: district
+          value: Da Pesada
+          description: ""
+        - id: pair_95897b8c3484408590d92164b30596d6
+          name: city
+          value: São Paulo
+          description: ""
+        - id: pair_39d3e194460f473e829ab1d2a3d5b689
+          name: country
+          value: Brasil
+          description: ""
+        - id: pair_445c3860f17c4c0698f39e09f7bd5e4d
+          name: zipcode
+          value: "12345678"
+          description: ""
+        - id: pair_d99e38e7a2cc4e8d9cee24fcd6c6eb96
+          name: state
+          value: SP
+          description: ""
+    parameters: []
+    headers:
+      - id: pair_4d079cdf141b45da9377d62b7d06bdc5
+        name: ""
+        value: ""
+        description: ""
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_49891cade58845ca9a87f04ba1e9ff57
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1645975690665.7812
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_4e0c497771274d9b94dbeaaf83399d4e
+    parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
+    modified: 1647394664830
+    created: 1647394337878
+    url: "{{ _.base_url }}/addresses/2"
+    name: Update
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_a498c64ccc4b44d9aea72ca7799f046a
+          name: street
+          value: Rua do Morango
+          description: ""
+        - id: pair_7272144fd68a4b0380bb57ef4b7dffee
+          name: ""
+          value: ""
+          description: ""
+    parameters: []
+    headers:
+      - id: pair_4d079cdf141b45da9377d62b7d06bdc5
+        name: ""
+        value: ""
+        description: ""
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_49891cade58845ca9a87f04ba1e9ff57
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1645967523544.5156
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a5d09674e143468eb6d540ef4a8b8540
+    parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
+    modified: 1647394670216
+    created: 1647394383268
+    url: "{{ _.base_url }}/addresses/2"
+    name: Delete
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_7272144fd68a4b0380bb57ef4b7dffee
+          name: ""
+          value: ""
+          description: ""
+    parameters: []
+    headers:
+      - id: pair_4d079cdf141b45da9377d62b7d06bdc5
+        name: ""
+        value: ""
+        description: ""
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_49891cade58845ca9a87f04ba1e9ff57
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1645963439983.8828
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_dac58d5bbe4e42afadd934ceca5c19b2
     parentId: fld_0e60a05891e34cc2afddbd92a76eca97
     modified: 1646351524196
@@ -450,14 +827,16 @@ resources:
     _type: api_spec
   - _id: env_457430a5dc7041568340403307037387
     parentId: env_bc66903b0301da7a93c3ab1d0b76588cf9295bec
-    modified: 1646351759031
+    modified: 1647393936001
     created: 1646351260361
     name: Development
     data:
       base_url: localhost:3000
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVjYXMiLCJlbWFpbCI6Imx1Y2FzLmNvZGV2QGdtYWlsLmNvbSIsInBob3RvIjpudWxsLCJpZCI6MiwiaWF0IjoxNjQ3MzkzOTI0LCJleHAiOjE2NDc5OTg3MjR9.QhYPfzlxLOfpT0H1GMsw2vVBw5NDMHkYdniw8DoF2lQ
     dataPropertyOrder:
       "&":
         - base_url
+        - token
     color: "#22a6b3"
     isPrivate: false
     metaSortKey: 1646351260361
