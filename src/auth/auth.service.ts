@@ -57,7 +57,7 @@ export class AuthService {
 
         await this.prisma.passwordRecovery.create({
             data: {
-                user_id: id,
+                userId: id,
                 token,
             },
         });
@@ -106,9 +106,6 @@ export class AuthService {
             },
         });
 
-        return this.passwordService.updatePassword(passwordRecovery.user_id, password);
+        return this.passwordService.updatePassword(passwordRecovery.userId, password);
     }
-
-
-
 }
