@@ -8,5 +8,8 @@ export class CreateIngredientDto {
   price: number;
 
   @IsNotEmpty()
+  typeId: number;
+
+  @IsNotEmpty()
   available: number;
 }
