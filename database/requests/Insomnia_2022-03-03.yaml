@@ -1,188 +1,8 @@
 _type: export
 __export_format: 4
-__export_date: 2022-03-16T23:52:36.610Z
+__export_date: 2022-03-17T00:50:31.156Z
 __export_source: insomnia.desktop.app:v2022.1.1
 resources:
-  - _id: req_63dbb6928ff34e9a833ea389772251cb
-    parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1646875341943
-    created: 1646875334473
-    url: "{{ _.base_url }}/orders"
-    name: List
-    description: ""
-    method: GET
-    body: {}
-    parameters: []
-    headers: []
-    authentication: {}
-    metaSortKey: -1646875334473
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: fld_f728d9f686964e40a9013f6c695edcdc
-    parentId: wrk_3941404da02d4a9796dac8ba65a716fb
-    modified: 1646875321993
-    created: 1646875321993
-    name: Orders
-    description: ""
-    environment: {}
-    environmentPropertyOrder: null
-    metaSortKey: -1646875321993
-    _type: request_group
-  - _id: wrk_3941404da02d4a9796dac8ba65a716fb
-    parentId: null
-    modified: 1646351142643
-    created: 1646351142643
-    name: OBurguer
-    description: ""
-    scope: collection
-    _type: workspace
-  - _id: req_99f066a99ac74efeb0ed878b9ab7528b
-    parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647471356438
-    created: 1646876630537
-    url: "{{ _.base_url }}/orders/1"
-    name: Show
-    description: ""
-    method: GET
-    body: {}
-    parameters: []
-    headers: []
-    authentication:
-      type: bearer
-      token: "{{ _.token }}"
-    metaSortKey: -1646783293120
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_77db56e0016c4895894c597cdb366526
-    parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647471592850
-    created: 1647036410027
-    url: "{{ _.base_url }}/orders/user/1"
-    name: Show by user
-    description: ""
-    method: GET
-    body: {}
-    parameters: []
-    headers: []
-    authentication:
-      type: bearer
-      token: "{{ _.token }}"
-    metaSortKey: -1646783293095
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_8b11a6b878744c5a8069fc680125b7d5
-    parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647471669418
-    created: 1646950644628
-    url: "{{ _.base_url }}/orders"
-    name: Create
-    description: ""
-    method: POST
-    body:
-      mimeType: application/json
-      text: |-
-        {
-        	"userId": 1,
-        	"items": [
-        		{
-        			"name": "Hamburguer 1",
-        			"ingredients": [3, 4, 6]
-        		},
-        		{
-        			"ingredients": [1, 4, 7]
-        		}
-        	]
-        }
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/json
-        id: pair_349528a669b140e898c00196e1ab0d95
-    authentication:
-      type: bearer
-      token: "{{ _.token }}"
-    metaSortKey: -1646783293070
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_5b4aa740088f48a9abd836b818624dcf
-    parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647472520330
-    created: 1646958968072
-    url: "{{ _.base_url }}/orders/3/update-status"
-    name: Update status
-    description: ""
-    method: PUT
-    body:
-      mimeType: application/x-www-form-urlencoded
-      params:
-        - id: pair_318cd215384140d4abf480bff3514130
-          name: statusId
-          value: "2"
-          description: ""
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/x-www-form-urlencoded
-        id: pair_349528a669b140e898c00196e1ab0d95
-    authentication:
-      type: bearer
-      token: "{{ _.token }}"
-    metaSortKey: -1646737272418.5
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_ac744fb1138c47b9851ec47df51344e5
-    parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647472680544
-    created: 1647039829820
-    url: "{{ _.base_url }}/orders/1"
-    name: Remove
-    description: ""
-    method: DELETE
-    body: {}
-    parameters: []
-    headers: []
-    authentication:
-      type: bearer
-      token: "{{ _.token }}"
-    metaSortKey: -1646737272368.5
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
   - _id: req_719b8eff883c4f4395b98a8d5ad6ac6d
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
     modified: 1647393940264
@@ -208,14 +28,22 @@ resources:
     _type: request
   - _id: fld_eb11f91941004adf8cd374835f1d6eab
     parentId: wrk_3941404da02d4a9796dac8ba65a716fb
-    modified: 1646351563700
+    modified: 1647477643415
     created: 1646351563700
     name: Auth
     description: ""
     environment: {}
     environmentPropertyOrder: null
-    metaSortKey: -1646351563700
+    metaSortKey: -1646875322043
     _type: request_group
+  - _id: wrk_3941404da02d4a9796dac8ba65a716fb
+    parentId: null
+    modified: 1646351142643
+    created: 1646351142643
+    name: OBurguer
+    description: ""
+    scope: collection
+    _type: workspace
   - _id: req_1052b7c730db438a9f3c64aa0f5be925
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
     modified: 1647393938593
@@ -252,7 +80,7 @@ resources:
     _type: request
   - _id: req_e1f65930fbaf4e038f151bca0a78fa9a
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647393595412
+    modified: 1647476848302
     created: 1647388543908
     url: "{{ _.base_url }}/auth/register"
     name: Register
@@ -267,7 +95,7 @@ resources:
           description: ""
         - id: pair_14a05859d9cd4d91b13a514c2803c054
           name: email
-          value: lucas.codev@gmail.com
+          value: codev@gmail.com
           description: ""
         - id: pair_e1fed5f58b064c479d4f6b5707ecd905
           name: password
@@ -280,42 +108,6 @@ resources:
         id: pair_e418a9253a754675b3d314bb4442d6b9
     authentication: {}
     metaSortKey: -1645861351018.0625
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_837722fb529c430bbcb754a655f5c9aa
-    parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647393803443
-    created: 1647389666901
-    url: "{{ _.base_url }}/auth/profile"
-    name: Update
-    description: ""
-    method: PUT
-    body:
-      mimeType: application/x-www-form-urlencoded
-      params:
-        - id: pair_f028a909b2424a6abbd319a2dc382547
-          name: name
-          value: Lucas
-          description: ""
-        - id: pair_02ab7921f3954e099b80d6134ff945da
-          name: email
-          value: versos@gmail.com
-          description: ""
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/x-www-form-urlencoded
-        id: pair_e418a9253a754675b3d314bb4442d6b9
-    authentication:
-      type: bearer
-      token: "{{ _.token }}"
-    metaSortKey: -1645861350993.0625
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -418,6 +210,214 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_d16ba893a2b64f579bc707348f747baf
+    parentId: fld_eb11f91941004adf8cd374835f1d6eab
+    modified: 1647478124523
+    created: 1646433914363
+    url: "{{ _.base_url }}/auth/profile"
+    name: Update
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_8ba11e2207df4213a300a63722d5e241
+          name: name
+          value: johnatan
+          description: ""
+        - id: pair_164b4a795c184caab3b884aaa72feb53
+          name: photo
+          value: "123456"
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_278b955651724840b1c000f51d64b99e
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1645853183771.7969
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_63dbb6928ff34e9a833ea389772251cb
+    parentId: fld_f728d9f686964e40a9013f6c695edcdc
+    modified: 1646875341943
+    created: 1646875334473
+    url: "{{ _.base_url }}/orders"
+    name: List
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646875334473
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_f728d9f686964e40a9013f6c695edcdc
+    parentId: wrk_3941404da02d4a9796dac8ba65a716fb
+    modified: 1646875321993
+    created: 1646875321993
+    name: Orders
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1646875321993
+    _type: request_group
+  - _id: req_99f066a99ac74efeb0ed878b9ab7528b
+    parentId: fld_f728d9f686964e40a9013f6c695edcdc
+    modified: 1647475600521
+    created: 1646876630537
+    url: "{{ _.base_url }}/orders/8"
+    name: Show
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1646783293120
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_77db56e0016c4895894c597cdb366526
+    parentId: fld_f728d9f686964e40a9013f6c695edcdc
+    modified: 1647471592850
+    created: 1647036410027
+    url: "{{ _.base_url }}/orders/user/1"
+    name: Show by user
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1646783293095
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_8b11a6b878744c5a8069fc680125b7d5
+    parentId: fld_f728d9f686964e40a9013f6c695edcdc
+    modified: 1647476342455
+    created: 1646950644628
+    url: "{{ _.base_url }}/orders"
+    name: Create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"userId": 1,
+        	"items": [
+        		{
+        			"name": "Hamburguer 1",
+        			"ingredients": [4, 6]
+        		},
+        		{
+        			"ingredients": [4, 7, 10]
+        		}
+        	]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_349528a669b140e898c00196e1ab0d95
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1646783293070
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5b4aa740088f48a9abd836b818624dcf
+    parentId: fld_f728d9f686964e40a9013f6c695edcdc
+    modified: 1647475649592
+    created: 1646958968072
+    url: "{{ _.base_url }}/orders/8/update-status"
+    name: Update status
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_318cd215384140d4abf480bff3514130
+          name: statusId
+          value: "3"
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_349528a669b140e898c00196e1ab0d95
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1646737272418.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ac744fb1138c47b9851ec47df51344e5
+    parentId: fld_f728d9f686964e40a9013f6c695edcdc
+    modified: 1647472680544
+    created: 1647039829820
+    url: "{{ _.base_url }}/orders/1"
+    name: Remove
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1646737272368.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_371e4db859f64785aa33e5388872ca7e
     parentId: fld_585af2c03e164cc98bf74281cfbda65c
     modified: 1646359457769
@@ -474,47 +474,9 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: req_d16ba893a2b64f579bc707348f747baf
-    parentId: fld_585af2c03e164cc98bf74281cfbda65c
-    modified: 1646437250511
-    created: 1646433914363
-    url: "{{ _.base_url }}/users/1"
-    name: Update
-    description: ""
-    method: PUT
-    body:
-      mimeType: application/x-www-form-urlencoded
-      params:
-        - id: pair_8ba11e2207df4213a300a63722d5e241
-          name: name
-          value: johnatan
-          description: ""
-        - id: pair_50e97f3b4f9d400e9d1ab98709a75c1a
-          name: email
-          value: pedroo@gmail.com
-          description: ""
-        - id: pair_164b4a795c184caab3b884aaa72feb53
-          name: password
-          value: "123456"
-          description: ""
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/x-www-form-urlencoded
-        id: pair_278b955651724840b1c000f51d64b99e
-    authentication: {}
-    metaSortKey: -1646351378194
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
   - _id: req_8f5ea11fb3074ff78bd19a51ee547684
     parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
-    modified: 1647394649761
+    modified: 1647478134712
     created: 1646351454490
     url: "{{ _.base_url }}/addresses"
     name: List
@@ -551,9 +513,9 @@ resources:
     _type: request_group
   - _id: req_fc016fde2b7144aaae58210f7d1b1d06
     parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
-    modified: 1647473316548
+    modified: 1647478181175
     created: 1647394068166
-    url: "{{ _.base_url }}/addresses/2"
+    url: "{{ _.base_url }}/addresses/3"
     name: Show by id
     description: ""
     method: GET
@@ -578,7 +540,7 @@ resources:
     _type: request
   - _id: req_9f17b7b1c1e3449d811d3fe46be2189d
     parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
-    modified: 1647394316499
+    modified: 1647478171939
     created: 1647394106947
     url: "{{ _.base_url }}/addresses/1"
     name: Show by person
@@ -605,7 +567,7 @@ resources:
     _type: request
   - _id: req_1254fcc8b043437fba20ffafcde4d009
     parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
-    modified: 1647394663547
+    modified: 1647478178522
     created: 1647394150371
     url: "{{ _.base_url }}/addresses"
     name: Create
@@ -778,9 +740,9 @@ resources:
     _type: request_group
   - _id: req_4055c44ce4fb49418f23dc7aea9df0c4
     parentId: fld_8ff1f5841b0f486c8ef8279942477760
-    modified: 1647474091151
+    modified: 1647475596503
     created: 1647474046568
-    url: "{{ _.base_url }}/ingredients/1"
+    url: "{{ _.base_url }}/ingredients/8"
     name: Show by id
     description: ""
     method: GET
@@ -824,7 +786,7 @@ resources:
     _type: request
   - _id: req_08ff175f61cb4398ac6c7b2f920cb073
     parentId: fld_8ff1f5841b0f486c8ef8279942477760
-    modified: 1647474101322
+    modified: 1647475247323
     created: 1647473326816
     url: "{{ _.base_url }}/ingredients"
     name: Create
