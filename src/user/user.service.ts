@@ -2,7 +2,9 @@ import { BadRequestException, Injectable, NotFoundException } from '@nestjs/comm
 import { Prisma } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { isValidNumber } from 'src/utils';
 import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 @Injectable()
 export class UserService {
@@ -100,33 +102,14 @@ export class UserService {
     return userCreated;
   }
 
-  async update(
-    id: number,
-    {
-      name,
-      email,
-      photo,
-    }: {
-      name?: string;
-      email?: string;
-      photo?: string;
-    },
-  ) {
-    id = Number(id);
-
-    if (isNaN(id)) {
-      throw new BadRequestException('ID is not a number');
-    }
+  async update(id: number, { name, photo }: UpdateUserDto) {
+    id = isValidNumber(id);
 
     const dataPerson = {} as Prisma.PersonUpdateInput;
     const dataUser = {} as Prisma.UserUpdateInput;
 
     if (name) {
       dataPerson.name = name;
-    }
-
-    if (email) {
-      dataUser.email = email;
     }
 
     if (photo) {
