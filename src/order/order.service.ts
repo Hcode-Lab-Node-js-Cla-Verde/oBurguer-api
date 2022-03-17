@@ -5,6 +5,7 @@ import { OrderStatusService } from './order-status.service';
 import { isValidNumber } from 'src/utils';
 import { CreateOrderDto } from './dto/create-order.dto';
 import orderQuery from './queries/select-order';
+import { IngredientService } from 'src/ingredient/ingredient.service';
 
 @Injectable()
 export class OrderService {
@@ -13,6 +14,7 @@ export class OrderService {
     private prismaService: PrismaService,
     private userService: UserService,
     private orderStatusService: OrderStatusService,
+    private ingredientService: IngredientService,
   ) {}
 
   findAll() {
@@ -67,10 +69,12 @@ export class OrderService {
       data: {
         statusId: 1,
         userId,
-        total: 10.2, // TODO: Count order total
+        total: 0,
       },
     });
 
+    let orderTotal = 0;
+    
     for (const item of items) {
       const orderItem = await this.prismaService.orderItem.create({
         data: {
@@ -80,17 +84,31 @@ export class OrderService {
       });
 
       for (const ingredientId of item.ingredients) {
+        const ingredient = await this.ingredientService.findOne(ingredientId);
+
+        if (!ingredient) {
+          throw new BadRequestException(`Ingredient of id #${ingredientId} not found`);
+        }
+
         await this.prismaService.itemIngredient.create({
           data: {
             ingredientId,
             orderItemId: orderItem.id,
-            ingredient_price: 10.00,
+            ingredient_price: +ingredient.price,
           },
         })
+
+        orderTotal += +ingredient.price;
       }
     }
 
-    return this.findOne(order.id);
+    return this.prismaService.order.update({
+      where: { id: order.id },
+      data: {
+        total: orderTotal,
+      },
+      select: orderQuery,
+    });
   }
 
   async updateStatus({ id, statusId }) {
@@ -118,7 +136,7 @@ export class OrderService {
     const { orderStatus } = await this.findOne(id);
 
     if (orderStatus.id !== 1) {
-      throw new BadRequestException('This order cannot be removed because is has been approved already');
+      throw new BadRequestException('This order cannot be removed because is has already been approved');
     }
 
     return this.prismaService.order.delete({
