@@ -2,6 +2,7 @@ import { BadRequestException, Injectable, NotFoundException } from '@nestjs/comm
 import { Prisma } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { CreateUserDto } from './dto/create-user.dto';
 
 @Injectable()
 export class UserService {
@@ -58,15 +59,7 @@ export class UserService {
     return user;
   }
 
-  async create({
-    name,
-    email,
-    password
-  }: {
-    name: string,
-    email: string,
-    password: string
-  }) {
+  async create({ name, email, password }: CreateUserDto) {
     if (!name) {
       throw new BadRequestException('Name is required');
     }
@@ -81,7 +74,7 @@ export class UserService {
 
     try {
       user = await this.findByEmail(email);
-    } catch (error) { }
+    } catch (error) {}
 
     if (user) {
       throw new BadRequestException('Email already exists');

@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Post, Put, UseGuards } from '@nestjs/common';
+import { CreateUserDto } from 'src/user/dto/create-user.dto';
 import { PasswordService } from 'src/user/password.service';
 import { User } from 'src/user/user.decorator';
 import { UserService } from 'src/user/user.service';
@@ -12,7 +13,7 @@ export class AuthController {
     private userService: UserService,
     private authService: AuthService,
     private passwordService: PasswordService
-  ) { }
+  ) {}
 
   @UseGuards(AuthGuard)
   @Get('online')
@@ -31,17 +32,9 @@ export class AuthController {
   }
 
   @Post('register')
-  async register(
-    @Body('name') name,
-    @Body('email') email,
-    @Body('password') password,
-  ) {
+  async register(@Body() data: CreateUserDto) {
 
-    const user = await this.userService.create({
-      name,
-      email,
-      password,
-    });
+    const user = await this.userService.create(data);
 
     const token = await this.authService.findToken(user.id);
 
