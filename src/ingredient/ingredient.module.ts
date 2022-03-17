@@ -19,5 +19,6 @@ import { UserModule } from 'src/user/user.module';
     IngredientService,
     IngredientTypeService
   ],
+  exports: [IngredientService],
 })
 export class IngredientModule {}
