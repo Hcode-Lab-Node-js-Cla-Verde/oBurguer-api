@@ -4,6 +4,5 @@ export class UpdateUserDto {
   @IsNotEmpty()
   name?: string;
   
-  @IsNotEmpty()
   photo?: string;
 }
