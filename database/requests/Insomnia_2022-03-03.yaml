@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2022-03-17T00:50:31.156Z
+__export_date: 2022-03-18T00:25:43.910Z
 __export_source: insomnia.desktop.app:v2022.1.1
 resources:
   - _id: req_719b8eff883c4f4395b98a8d5ad6ac6d
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647393940264
+    modified: 1647559196126
     created: 1647393882489
     url: "{{ _.base_url }}/auth/online"
     name: Me
@@ -46,7 +46,7 @@ resources:
     _type: workspace
   - _id: req_1052b7c730db438a9f3c64aa0f5be925
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647393938593
+    modified: 1647560903354
     created: 1647390084096
     url: "{{ _.base_url }}/auth/login"
     name: Login
@@ -57,11 +57,11 @@ resources:
       params:
         - id: pair_53d30928dd8e42839f3921a678efc2fb
           name: email
-          value: lucas.codev@gmail.com
+          value: henrique@gmail.com
           description: ""
         - id: pair_daf9952273fc436eb91cdae360e326b3
           name: password
-          value: "321"
+          value: "123"
           description: ""
     parameters: []
     headers:
@@ -80,7 +80,7 @@ resources:
     _type: request
   - _id: req_e1f65930fbaf4e038f151bca0a78fa9a
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647476848302
+    modified: 1647560900858
     created: 1647388543908
     url: "{{ _.base_url }}/auth/register"
     name: Register
@@ -91,11 +91,11 @@ resources:
       params:
         - id: pair_f028a909b2424a6abbd319a2dc382547
           name: name
-          value: Lucas
+          value: Pedro
           description: ""
         - id: pair_14a05859d9cd4d91b13a514c2803c054
           name: email
-          value: codev@gmail.com
+          value: henrique@gmail.com
           description: ""
         - id: pair_e1fed5f58b064c479d4f6b5707ecd905
           name: password
@@ -325,7 +325,7 @@ resources:
     _type: request
   - _id: req_8b11a6b878744c5a8069fc680125b7d5
     parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647476342455
+    modified: 1647558489584
     created: 1646950644628
     url: "{{ _.base_url }}/orders"
     name: Create
@@ -339,10 +339,10 @@ resources:
         	"items": [
         		{
         			"name": "Hamburguer 1",
-        			"ingredients": [4, 6]
+        			"ingredients": [1]
         		},
         		{
-        			"ingredients": [4, 7, 10]
+        			"ingredients": [1, 4]
         		}
         	]
         }
@@ -476,7 +476,7 @@ resources:
     _type: request
   - _id: req_8f5ea11fb3074ff78bd19a51ee547684
     parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
-    modified: 1647478134712
+    modified: 1647560863767
     created: 1646351454490
     url: "{{ _.base_url }}/addresses"
     name: List
@@ -513,7 +513,7 @@ resources:
     _type: request_group
   - _id: req_fc016fde2b7144aaae58210f7d1b1d06
     parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
-    modified: 1647478181175
+    modified: 1647555678105
     created: 1647394068166
     url: "{{ _.base_url }}/addresses/3"
     name: Show by id
@@ -707,7 +707,7 @@ resources:
     _type: request
   - _id: req_44ea78fe2a1b416c88b3354eaf28f50d
     parentId: fld_8ff1f5841b0f486c8ef8279942477760
-    modified: 1647474090064
+    modified: 1647560871053
     created: 1646351495741
     url: "{{ _.base_url }}/ingredients"
     name: List
@@ -740,7 +740,7 @@ resources:
     _type: request_group
   - _id: req_4055c44ce4fb49418f23dc7aea9df0c4
     parentId: fld_8ff1f5841b0f486c8ef8279942477760
-    modified: 1647475596503
+    modified: 1647560874316
     created: 1647474046568
     url: "{{ _.base_url }}/ingredients/8"
     name: Show by id
@@ -761,32 +761,9 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: req_d036e42c3d294e8b85592158596c283f
-    parentId: fld_8ff1f5841b0f486c8ef8279942477760
-    modified: 1647474130557
-    created: 1647474109277
-    url: "{{ _.base_url }}/ingredients/1"
-    name: Delete
-    description: ""
-    method: DELETE
-    body: {}
-    parameters: []
-    headers: []
-    authentication:
-      type: bearer
-      token: "{{ _.token }}"
-    metaSortKey: -1645934855059.4531
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
   - _id: req_08ff175f61cb4398ac6c7b2f920cb073
     parentId: fld_8ff1f5841b0f486c8ef8279942477760
-    modified: 1647475247323
+    modified: 1647563078651
     created: 1647473326816
     url: "{{ _.base_url }}/ingredients"
     name: Create
@@ -797,7 +774,7 @@ resources:
       params:
         - id: pair_ac749449f821457380840a1ee2399deb
           name: name
-          value: Pão de Forma
+          value: Queijo Parmesão
           description: ""
         - id: pair_0a978b2128fa42a2bef743b27ed7e064
           name: price
@@ -805,7 +782,7 @@ resources:
           description: ""
         - id: pair_0b013e0418334a078dd7bee7723fc7db
           name: typeId
-          value: "1"
+          value: "2"
           description: ""
         - id: pair_f32729ac499548138a776c919281f7cc
           name: available
@@ -819,7 +796,30 @@ resources:
     authentication:
       type: bearer
       token: "{{ _.token }}"
-    metaSortKey: -1645926687938.1875
+    metaSortKey: -1645938938620.086
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d036e42c3d294e8b85592158596c283f
+    parentId: fld_8ff1f5841b0f486c8ef8279942477760
+    modified: 1647555774479
+    created: 1647474109277
+    url: "{{ _.base_url }}/ingredients/1"
+    name: Delete
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1645934855059.4531
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -856,12 +856,12 @@ resources:
     _type: api_spec
   - _id: env_457430a5dc7041568340403307037387
     parentId: env_bc66903b0301da7a93c3ab1d0b76588cf9295bec
-    modified: 1647393936001
+    modified: 1647559215601
     created: 1646351260361
     name: Development
     data:
       base_url: localhost:3000
-      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVjYXMiLCJlbWFpbCI6Imx1Y2FzLmNvZGV2QGdtYWlsLmNvbSIsInBob3RvIjpudWxsLCJpZCI6MiwiaWF0IjoxNjQ3MzkzOTI0LCJleHAiOjE2NDc5OTg3MjR9.QhYPfzlxLOfpT0H1GMsw2vVBw5NDMHkYdniw8DoF2lQ
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6ImhlbnJpcXVlQGdtYWlsLmNvbSIsInBob3RvIjpudWxsLCJpZCI6MiwiaWF0IjoxNjQ3NTU5MjAwLCJleHAiOjE2NDgxNjQwMDB9.wjhnv7aW63wTkMZo4ZtL3lSotfS4BiG5UjzFMU0vpck
     dataPropertyOrder:
       "&":
         - base_url
@@ -869,4 +869,20 @@ resources:
     color: "#22a6b3"
     isPrivate: false
     metaSortKey: 1646351260361
+    _type: environment
+  - _id: env_158ddd374e284362805483088a4ca60d
+    parentId: env_bc66903b0301da7a93c3ab1d0b76588cf9295bec
+    modified: 1647563078124
+    created: 1647555619739
+    name: Production
+    data:
+      base_url: http://3.88.49.134
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6ImhlbnJpcXVlQGdtYWlsLmNvbSIsInBob3RvIjpudWxsLCJpZCI6MywiaWF0IjoxNjQ3NTYwOTAxLCJleHAiOjE2NDgxNjU3MDF9.ZrD5GVy31l5ykEFrRpe6yiSBLLjSgTColPFL09d8Rss
+    dataPropertyOrder:
+      "&":
+        - base_url
+        - token
+    color: "#ff1900"
+    isPrivate: false
+    metaSortKey: 1647555619739
     _type: environment
