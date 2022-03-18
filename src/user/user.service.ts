@@ -27,12 +27,12 @@ export class UserService {
       },
     });
 
-    if (!hash) {
-      delete user.password;
-    }
-
     if (!user) {
       throw new NotFoundException('User not found');
+    }
+
+    if (!hash) {
+      delete user.password;
     }
 
     return user;

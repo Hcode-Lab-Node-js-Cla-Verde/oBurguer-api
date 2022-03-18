@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2022-03-18T00:25:43.910Z
-__export_source: insomnia.desktop.app:v2022.1.1
+__export_date: 2022-03-18T22:42:44.688Z
+__export_source: insomnia.desktop.app:v2022.2.0
 resources:
   - _id: req_719b8eff883c4f4395b98a8d5ad6ac6d
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647559196126
+    modified: 1647643120452
     created: 1647393882489
     url: "{{ _.base_url }}/auth/online"
     name: Me
@@ -46,7 +46,7 @@ resources:
     _type: workspace
   - _id: req_1052b7c730db438a9f3c64aa0f5be925
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647560903354
+    modified: 1647642567489
     created: 1647390084096
     url: "{{ _.base_url }}/auth/login"
     name: Login
@@ -57,11 +57,11 @@ resources:
       params:
         - id: pair_53d30928dd8e42839f3921a678efc2fb
           name: email
-          value: henrique@gmail.com
+          value: test@gmail.com
           description: ""
         - id: pair_daf9952273fc436eb91cdae360e326b3
           name: password
-          value: "123"
+          value: "321"
           description: ""
     parameters: []
     headers:
@@ -80,7 +80,7 @@ resources:
     _type: request
   - _id: req_e1f65930fbaf4e038f151bca0a78fa9a
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647560900858
+    modified: 1647641461324
     created: 1647388543908
     url: "{{ _.base_url }}/auth/register"
     name: Register
@@ -91,11 +91,11 @@ resources:
       params:
         - id: pair_f028a909b2424a6abbd319a2dc382547
           name: name
-          value: Pedro
+          value: Test user
           description: ""
         - id: pair_14a05859d9cd4d91b13a514c2803c054
           name: email
-          value: henrique@gmail.com
+          value: test@gmail.com
           description: ""
         - id: pair_e1fed5f58b064c479d4f6b5707ecd905
           name: password
@@ -118,7 +118,7 @@ resources:
     _type: request
   - _id: req_78446d964b5b4882b91e63edfea1576f
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647393850660
+    modified: 1647641512852
     created: 1646351546603
     url: "{{ _.base_url }}/auth"
     name: Verify user
@@ -129,7 +129,7 @@ resources:
       params:
         - id: pair_661ee809bf76429f89d052826de64752
           name: email
-          value: john.doe@gmail.com
+          value: e@gmail.com
           description: ""
     parameters: []
     headers:
@@ -148,7 +148,7 @@ resources:
     _type: request
   - _id: req_4e32ab275f2a457aa014e609e824f39f
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647393599241
+    modified: 1647641643423
     created: 1647390884885
     url: "{{ _.base_url }}/auth/forget"
     name: Password recovery
@@ -159,7 +159,7 @@ resources:
       params:
         - id: pair_8d7b530b5ccc44c1adee11235658901c
           name: email
-          value: lucas.codev@gmail.com
+          value: test@gmail.com
           description: ""
     parameters: []
     headers:
@@ -178,7 +178,7 @@ resources:
     _type: request
   - _id: req_6f6ee1e7929a45d4a695bb97077424b1
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647393615877
+    modified: 1647642561112
     created: 1647391628669
     url: "{{ _.base_url }}/auth/password-reset"
     name: Password reset
@@ -193,7 +193,7 @@ resources:
           description: ""
         - id: pair_1579a28f09ac4eef8892ad465da02b21
           name: token
-          value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjQ3MzkzNTk4LCJleHAiOjE2NDczOTUzOTh9.7Go7-bIUE90atnGZevJg3hcy18zYavJDj9GfMIloMXk
+          value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjQ3NjQyNTAxLCJleHAiOjE2NDc2NDQzMDF9.Fp9_3SvKl14tJkK31BBGf-SmevcCPXElIe6WUAuncL0
           description: ""
     parameters: []
     headers:
@@ -212,7 +212,7 @@ resources:
     _type: request
   - _id: req_d16ba893a2b64f579bc707348f747baf
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647478124523
+    modified: 1647641743250
     created: 1646433914363
     url: "{{ _.base_url }}/auth/profile"
     name: Update
@@ -223,11 +223,11 @@ resources:
       params:
         - id: pair_8ba11e2207df4213a300a63722d5e241
           name: name
-          value: johnatan
+          value: Usuário teste
           description: ""
-        - id: pair_164b4a795c184caab3b884aaa72feb53
+        - id: pair_686039626c0c4e1ba06be45f9ab94e7c
           name: photo
-          value: "123456"
+          value: photo.svg
           description: ""
     parameters: []
     headers:
@@ -279,7 +279,7 @@ resources:
     _type: request_group
   - _id: req_99f066a99ac74efeb0ed878b9ab7528b
     parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647475600521
+    modified: 1647643260135
     created: 1646876630537
     url: "{{ _.base_url }}/orders/8"
     name: Show
@@ -302,7 +302,7 @@ resources:
     _type: request
   - _id: req_77db56e0016c4895894c597cdb366526
     parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647471592850
+    modified: 1647643261398
     created: 1647036410027
     url: "{{ _.base_url }}/orders/user/1"
     name: Show by user
@@ -410,62 +410,6 @@ resources:
       type: bearer
       token: "{{ _.token }}"
     metaSortKey: -1646737272368.5
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_371e4db859f64785aa33e5388872ca7e
-    parentId: fld_585af2c03e164cc98bf74281cfbda65c
-    modified: 1646359457769
-    created: 1646359245995
-    url: "{{ _.base_url }}/users"
-    name: Show by email
-    description: ""
-    method: GET
-    body: {}
-    parameters:
-      - id: pair_331076cb1e3f46eb8d1bd654c07f1479
-        name: email
-        value: john.doe@gmail.com
-        description: ""
-    headers: []
-    authentication: {}
-    metaSortKey: -1646351378294
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: fld_585af2c03e164cc98bf74281cfbda65c
-    parentId: wrk_3941404da02d4a9796dac8ba65a716fb
-    modified: 1646351727947
-    created: 1646351181058
-    name: Users
-    description: ""
-    environment: {}
-    environmentPropertyOrder: null
-    metaSortKey: -1646351550748
-    _type: request_group
-  - _id: req_31beaf6f5f6c4cbb86c46591b9038517
-    parentId: fld_585af2c03e164cc98bf74281cfbda65c
-    modified: 1646359230806
-    created: 1646351378244
-    url: "{{ _.base_url }}/users/1"
-    name: Show
-    description: ""
-    method: GET
-    body: {}
-    parameters: []
-    headers: []
-    authentication: {}
-    metaSortKey: -1646351378244
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -740,7 +684,7 @@ resources:
     _type: request_group
   - _id: req_4055c44ce4fb49418f23dc7aea9df0c4
     parentId: fld_8ff1f5841b0f486c8ef8279942477760
-    modified: 1647560874316
+    modified: 1647641412028
     created: 1647474046568
     url: "{{ _.base_url }}/ingredients/8"
     name: Show by id
@@ -763,7 +707,7 @@ resources:
     _type: request
   - _id: req_08ff175f61cb4398ac6c7b2f920cb073
     parentId: fld_8ff1f5841b0f486c8ef8279942477760
-    modified: 1647563078651
+    modified: 1647641409481
     created: 1647473326816
     url: "{{ _.base_url }}/ingredients"
     name: Create
@@ -872,12 +816,12 @@ resources:
     _type: environment
   - _id: env_158ddd374e284362805483088a4ca60d
     parentId: env_bc66903b0301da7a93c3ab1d0b76588cf9295bec
-    modified: 1647563078124
+    modified: 1647642731823
     created: 1647555619739
     name: Production
     data:
-      base_url: http://3.88.49.134
-      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6ImhlbnJpcXVlQGdtYWlsLmNvbSIsInBob3RvIjpudWxsLCJpZCI6MywiaWF0IjoxNjQ3NTYwOTAxLCJleHAiOjE2NDgxNjU3MDF9.ZrD5GVy31l5ykEFrRpe6yiSBLLjSgTColPFL09d8Rss
+      base_url: http://54.91.213.54
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXN1w6FyaW8gdGVzdGUiLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicGhvdG8iOiJwaG90by5zdmciLCJpZCI6NCwiaWF0IjoxNjQ3NjQyNTY5LCJleHAiOjE2NDgyNDczNjl9.R8WH7tEEWbuAuCfU4_loUZGwoYwTxg0f5igdZOeGj74
     dataPropertyOrder:
       "&":
         - base_url
