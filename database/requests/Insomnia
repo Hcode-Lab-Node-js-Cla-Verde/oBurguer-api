@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2022-03-18T22:42:44.688Z
+__export_date: 2022-03-18T23:24:48.998Z
 __export_source: insomnia.desktop.app:v2022.2.0
 resources:
   - _id: req_719b8eff883c4f4395b98a8d5ad6ac6d
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647643120452
+    modified: 1647644912295
     created: 1647393882489
     url: "{{ _.base_url }}/auth/online"
     name: Me
@@ -46,7 +46,7 @@ resources:
     _type: workspace
   - _id: req_1052b7c730db438a9f3c64aa0f5be925
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647642567489
+    modified: 1647644079820
     created: 1647390084096
     url: "{{ _.base_url }}/auth/login"
     name: Login
@@ -80,7 +80,7 @@ resources:
     _type: request
   - _id: req_e1f65930fbaf4e038f151bca0a78fa9a
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647641461324
+    modified: 1647644081171
     created: 1647388543908
     url: "{{ _.base_url }}/auth/register"
     name: Register
@@ -118,10 +118,10 @@ resources:
     _type: request
   - _id: req_78446d964b5b4882b91e63edfea1576f
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647641512852
+    modified: 1647644058654
     created: 1646351546603
     url: "{{ _.base_url }}/auth"
-    name: Verify user
+    name: Check registration
     description: ""
     method: POST
     body:
@@ -178,7 +178,7 @@ resources:
     _type: request
   - _id: req_6f6ee1e7929a45d4a695bb97077424b1
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647642561112
+    modified: 1647644215300
     created: 1647391628669
     url: "{{ _.base_url }}/auth/password-reset"
     name: Password reset
@@ -212,7 +212,7 @@ resources:
     _type: request
   - _id: req_d16ba893a2b64f579bc707348f747baf
     parentId: fld_eb11f91941004adf8cd374835f1d6eab
-    modified: 1647641743250
+    modified: 1647644216723
     created: 1646433914363
     url: "{{ _.base_url }}/auth/profile"
     name: Update
@@ -223,11 +223,7 @@ resources:
       params:
         - id: pair_8ba11e2207df4213a300a63722d5e241
           name: name
-          value: Usuário teste
-          description: ""
-        - id: pair_686039626c0c4e1ba06be45f9ab94e7c
-          name: photo
-          value: photo.svg
+          value: Usuário teste2
           description: ""
     parameters: []
     headers:
@@ -279,9 +275,9 @@ resources:
     _type: request_group
   - _id: req_99f066a99ac74efeb0ed878b9ab7528b
     parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647643260135
+    modified: 1647644732398
     created: 1646876630537
-    url: "{{ _.base_url }}/orders/8"
+    url: "{{ _.base_url }}/orders/7"
     name: Show
     description: ""
     method: GET
@@ -302,9 +298,9 @@ resources:
     _type: request
   - _id: req_77db56e0016c4895894c597cdb366526
     parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647643261398
+    modified: 1647644918745
     created: 1647036410027
-    url: "{{ _.base_url }}/orders/user/1"
+    url: "{{ _.base_url }}/orders/user/2"
     name: Show by user
     description: ""
     method: GET
@@ -325,7 +321,7 @@ resources:
     _type: request
   - _id: req_8b11a6b878744c5a8069fc680125b7d5
     parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647558489584
+    modified: 1647645768270
     created: 1646950644628
     url: "{{ _.base_url }}/orders"
     name: Create
@@ -335,7 +331,6 @@ resources:
       mimeType: application/json
       text: |-
         {
-        	"userId": 1,
         	"items": [
         		{
         			"name": "Hamburguer 1",
@@ -365,9 +360,9 @@ resources:
     _type: request
   - _id: req_5b4aa740088f48a9abd836b818624dcf
     parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647475649592
+    modified: 1647644829562
     created: 1646958968072
-    url: "{{ _.base_url }}/orders/8/update-status"
+    url: "{{ _.base_url }}/orders/7/update-status"
     name: Update status
     description: ""
     method: PUT
@@ -397,9 +392,9 @@ resources:
     _type: request
   - _id: req_ac744fb1138c47b9851ec47df51344e5
     parentId: fld_f728d9f686964e40a9013f6c695edcdc
-    modified: 1647472680544
+    modified: 1647644849675
     created: 1647039829820
-    url: "{{ _.base_url }}/orders/1"
+    url: "{{ _.base_url }}/orders/6"
     name: Remove
     description: ""
     method: DELETE
@@ -420,7 +415,7 @@ resources:
     _type: request
   - _id: req_8f5ea11fb3074ff78bd19a51ee547684
     parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
-    modified: 1647560863767
+    modified: 1647645313719
     created: 1646351454490
     url: "{{ _.base_url }}/addresses"
     name: List
@@ -457,9 +452,9 @@ resources:
     _type: request_group
   - _id: req_fc016fde2b7144aaae58210f7d1b1d06
     parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
-    modified: 1647555678105
+    modified: 1647645800655
     created: 1647394068166
-    url: "{{ _.base_url }}/addresses/3"
+    url: "{{ _.base_url }}/addresses/1"
     name: Show by id
     description: ""
     method: GET
@@ -484,19 +479,15 @@ resources:
     _type: request
   - _id: req_9f17b7b1c1e3449d811d3fe46be2189d
     parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
-    modified: 1647478171939
+    modified: 1647645803600
     created: 1647394106947
-    url: "{{ _.base_url }}/addresses/1"
+    url: "{{ _.base_url }}/addresses/person"
     name: Show by person
     description: ""
     method: GET
     body: {}
     parameters: []
-    headers:
-      - id: pair_4d079cdf141b45da9377d62b7d06bdc5
-        name: ""
-        value: ""
-        description: ""
+    headers: []
     authentication:
       type: bearer
       token: "{{ _.token }}"
@@ -511,7 +502,7 @@ resources:
     _type: request
   - _id: req_1254fcc8b043437fba20ffafcde4d009
     parentId: fld_8a65da6415bd46d58e8cf0afa84b1be0
-    modified: 1647478178522
+    modified: 1647645308565
     created: 1647394150371
     url: "{{ _.base_url }}/addresses"
     name: Create
@@ -651,7 +642,7 @@ resources:
     _type: request
   - _id: req_44ea78fe2a1b416c88b3354eaf28f50d
     parentId: fld_8ff1f5841b0f486c8ef8279942477760
-    modified: 1647560871053
+    modified: 1647645720799
     created: 1646351495741
     url: "{{ _.base_url }}/ingredients"
     name: List
@@ -684,9 +675,9 @@ resources:
     _type: request_group
   - _id: req_4055c44ce4fb49418f23dc7aea9df0c4
     parentId: fld_8ff1f5841b0f486c8ef8279942477760
-    modified: 1647641412028
+    modified: 1647645731745
     created: 1647474046568
-    url: "{{ _.base_url }}/ingredients/8"
+    url: "{{ _.base_url }}/ingredients/5"
     name: Show by id
     description: ""
     method: GET
@@ -707,7 +698,7 @@ resources:
     _type: request
   - _id: req_08ff175f61cb4398ac6c7b2f920cb073
     parentId: fld_8ff1f5841b0f486c8ef8279942477760
-    modified: 1647641409481
+    modified: 1647645748191
     created: 1647473326816
     url: "{{ _.base_url }}/ingredients"
     name: Create
@@ -751,7 +742,7 @@ resources:
     _type: request
   - _id: req_d036e42c3d294e8b85592158596c283f
     parentId: fld_8ff1f5841b0f486c8ef8279942477760
-    modified: 1647555774479
+    modified: 1647645743754
     created: 1647474109277
     url: "{{ _.base_url }}/ingredients/1"
     name: Delete
