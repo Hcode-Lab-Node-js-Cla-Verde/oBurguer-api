@@ -2,6 +2,16 @@ export default {
   id: true,
   total: true,
   createdAt: true,
+  users: {
+    select: {
+      id: true,
+      persons: {
+        select: {
+          name: true,
+        },
+      },
+    },
+  },
   orderStatus: {
     select: {
       id: true,
