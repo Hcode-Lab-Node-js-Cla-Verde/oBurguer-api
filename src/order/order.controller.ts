@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Param, Delete, Put, UseGuards } from '@nes
 import { OrderService } from './order.service';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { AuthGuard } from 'src/auth/auth.guard';
+import { User } from 'src/user/user.decorator';
 
 @Controller('orders')
 export class OrderController {
@@ -26,8 +27,11 @@ export class OrderController {
 
   @UseGuards(AuthGuard)
   @Post()
-  create(@Body() data: CreateOrderDto) {
-    return this.orderService.create(data);
+  create(
+    @Body() data: CreateOrderDto,
+    @User() user,
+  ) {
+    return this.orderService.create(+user.id, data);
   }
 
   @UseGuards(AuthGuard)

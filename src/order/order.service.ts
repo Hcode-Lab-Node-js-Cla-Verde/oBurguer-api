@@ -49,7 +49,7 @@ export class OrderService {
     });
   }
 
-  async create({ userId, items }: CreateOrderDto) {
+  async create(userId, { items }: CreateOrderDto) {
     userId = isValidNumber(userId);
 
     if (!items.length) {
