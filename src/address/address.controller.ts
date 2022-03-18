@@ -14,21 +14,18 @@ export class AddressController {
     async listAll() {
         return await this.addressService.findAll();
     }
+
+    @UseGuards(AuthGuard)
+    @Get('person')
+    async listByPerson(@User() user) {
+        return this.addressService.findByPerson(+user.personId);
+    }
     
     @UseGuards(AuthGuard)
     @Get(':id')
     async listById(@Param('id', new ParseIntPipe()) id: number) {
         return await this.addressService.findOne(id);
     }
-
-    @UseGuards(AuthGuard)
-    @Get('person')
-    async listByPerson(
-        @User() user,
-    ) {
-        return this.addressService.findByPerson(user.personId);
-    }
-
     @UseGuards(AuthGuard)
     @Post()
     async createAddress(
