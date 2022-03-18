@@ -1,4 +1,5 @@
 .env
+.env.save
 
 # compiled output
 /dist
